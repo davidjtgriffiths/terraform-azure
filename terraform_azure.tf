@@ -5,7 +5,9 @@ provider "azurerm" {
     version = "~>2.0"
     skip_provider_registration = true
     subscription_id = "e692b449-ce48-439b-9f0b-dbf399f75c42"
-    client_id = "0e5272cc-63eb-40d5-8e71-9b336bd9709c"
+    tenant_id = "35902931-f134-4f8e-a5ba-13c3d8177394"
+    client_id = "6f7739c2-f463-4803-8838-f740d02abeca"
+    client_secret ="t.c6Q.P.owJZ51..-0zPFrhmA~3VJmAYcj"
     features {}
 }
 
