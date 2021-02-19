@@ -11,10 +11,10 @@ stages :
       - task: TerraformTaskV1@0
         displayName: 'init'
         inputs:
-          azureSubscription: 'tasconn'
+
           provider: 'azurerm'
           command: 'init'
-          backendServiceArm: 'targ'
+          backendServiceArm: 'tasconn'
           backendAzureRmResourceGroupName: 'targ'
           backendAzureRmStorageAccountName: 'tasacc'
           backendAzureRmContainerName: 'tasc'
