@@ -13,10 +13,10 @@ stages :
         inputs:
           provider: 'azurerm'
           command: 'init'
-          backendServiceArm: 'tamopstf'
-          backendAzureRmResourceGroupName: 'tamopstf'
-          backendAzureRmStorageAccountName: 'tamopstf'
-          backendAzureRmContainerName: 'tfstatedevops'
+          backendServiceArm: 'targ'
+          backendAzureRmResourceGroupName: 'targ'
+          backendAzureRmStorageAccountName: 'tasacc'
+          backendAzureRmContainerName: 'tasc'
           backendAzureRmKey: 'terraform.tfstate'
       - task: TerraformTaskV1@0
         displayName: 'validate'
