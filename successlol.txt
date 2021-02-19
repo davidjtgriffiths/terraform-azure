@@ -1,0 +1,1466 @@
+2021-02-19T20:10:59.1744801Z ##[section]Starting: deploy_terraform
+2021-02-19T20:10:59.1791697Z ##[debug]Cleaning agent temp folder: /home/vsts/work/_temp
+2021-02-19T20:10:59.1825114Z ##[debug]Skipping overwrite %TEMP% environment variable
+2021-02-19T20:10:59.3220665Z ##[section]Starting: Initialize job
+2021-02-19T20:10:59.3222261Z Agent name: 'Hosted Agent'
+2021-02-19T20:10:59.3222672Z Agent machine name: 'fv-az207-873'
+2021-02-19T20:10:59.3222951Z Current agent version: '2.182.1'
+2021-02-19T20:10:59.3269757Z ##[group]Operating System
+2021-02-19T20:10:59.3270074Z Ubuntu
+2021-02-19T20:10:59.3270442Z 16.04.7
+2021-02-19T20:10:59.3270649Z LTS
+2021-02-19T20:10:59.3271103Z ##[endgroup]
+2021-02-19T20:10:59.3271343Z ##[group]Virtual Environment
+2021-02-19T20:10:59.3271640Z Environment: ubuntu-16.04
+2021-02-19T20:10:59.3272072Z Version: 20210216.1
+2021-02-19T20:10:59.3272802Z Included Software: https://github.com/actions/virtual-environments/blob/ubuntu16/20210216.1/images/linux/Ubuntu1604-README.md
+2021-02-19T20:10:59.3273185Z ##[endgroup]
+2021-02-19T20:10:59.3274732Z Current image version: '20210216.1'
+2021-02-19T20:10:59.3290640Z Agent running as: 'vsts'
+2021-02-19T20:10:59.3336833Z ##[debug]Triggering repository: davidjtgriffiths/terraform-azure. repository type: GitHub
+2021-02-19T20:10:59.3341871Z Prepare build directory.
+2021-02-19T20:10:59.3581850Z ##[debug]Creating build directory: '/home/vsts/work/1'
+2021-02-19T20:10:59.3583701Z ##[debug]Delete existing artifacts directory: '/home/vsts/work/1/a'
+2021-02-19T20:10:59.3586181Z ##[debug]Creating artifacts directory: '/home/vsts/work/1/a'
+2021-02-19T20:10:59.3587886Z ##[debug]Delete existing test results directory: '/home/vsts/work/1/TestResults'
+2021-02-19T20:10:59.3588629Z ##[debug]Creating test results directory: '/home/vsts/work/1/TestResults'
+2021-02-19T20:10:59.3590276Z ##[debug]Creating binaries directory: '/home/vsts/work/1/b'
+2021-02-19T20:10:59.3591835Z ##[debug]Creating source directory: '/home/vsts/work/1/s'
+2021-02-19T20:10:59.3631686Z Set build variables.
+2021-02-19T20:10:59.3665927Z Download all required tasks.
+2021-02-19T20:10:59.3794607Z Downloading task: TerraformInstaller (0.0.19)
+2021-02-19T20:11:00.0864191Z ##[debug]Task 'TerraformInstaller' has been downloaded into '/home/vsts/work/_tasks/TerraformInstaller_a4789e5d-f6e8-431f-add9-379d640a883c/0.0.19'.
+2021-02-19T20:11:01.0718855Z Downloading task: TerraformTaskV1 (0.0.142)
+2021-02-19T20:11:01.2610261Z ##[debug]Task 'TerraformTaskV1' has been downloaded into '/home/vsts/work/_tasks/TerraformTaskV1_fe504acc-6115-40cb-89ff-191386b5e7bf/0.0.142'.
+2021-02-19T20:11:01.2643498Z Checking job knob settings.
+2021-02-19T20:11:01.2656508Z    Knob: AgentToolsDirectory = /opt/hostedtoolcache Source: ${AGENT_TOOLSDIRECTORY} 
+2021-02-19T20:11:01.2658816Z    Knob: AgentPerflog = /home/vsts/perflog Source: ${VSTS_AGENT_PERFLOG} 
+2021-02-19T20:11:01.2659949Z Finished checking job knob settings.
+2021-02-19T20:11:01.2993833Z ##[debug]Log plugin 'TestFilePublisherPlugin' is disabled.
+2021-02-19T20:11:01.3243196Z Plugin: 'Test Result Parser plugin' is running in background.
+2021-02-19T20:11:01.3243594Z Plugin: 'Test File Publisher plugin' is running in background.
+2021-02-19T20:11:01.3244140Z Start tracking orphan processes.
+2021-02-19T20:11:01.3420320Z ##[section]Finishing: Initialize job
+2021-02-19T20:11:01.3553942Z ##[debug]Evaluating condition for step: 'Checkout davidjtgriffiths/terraform-azure@main to s'
+2021-02-19T20:11:01.3611206Z ##[debug]Evaluating: SucceededNode()
+2021-02-19T20:11:01.3619634Z ##[debug]Evaluating SucceededNode:
+2021-02-19T20:11:01.3666810Z ##[debug]=> True
+2021-02-19T20:11:01.3677932Z ##[debug]Result: True
+2021-02-19T20:11:01.3726532Z ##[section]Starting: Checkout davidjtgriffiths/terraform-azure@main to s
+2021-02-19T20:11:01.3959659Z ==============================================================================
+2021-02-19T20:11:01.3960481Z Task         : Get sources
+2021-02-19T20:11:01.3961242Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2021-02-19T20:11:01.3961573Z Version      : 1.0.0
+2021-02-19T20:11:01.3962369Z Author       : Microsoft
+2021-02-19T20:11:01.3963082Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2021-02-19T20:11:01.3963507Z ==============================================================================
+2021-02-19T20:11:02.0483880Z ##[debug]Processed: ##vso[plugininternal.updaterepositorypath alias=self;]/home/vsts/work/1/s
+2021-02-19T20:11:02.0487649Z ##[debug]Repository requires to be placed at '/home/vsts/work/1/s', current location is '/home/vsts/work/1/s'
+2021-02-19T20:11:02.0489246Z Syncing repository: davidjtgriffiths/terraform-azure (GitHub)
+2021-02-19T20:11:02.0490415Z ##[debug]repository url=https://github.com/davidjtgriffiths/terraform-azure
+2021-02-19T20:11:02.0491137Z ##[debug]targetPath=/home/vsts/work/1/s
+2021-02-19T20:11:02.0492278Z ##[debug]sourceBranch=refs/heads/main
+2021-02-19T20:11:02.0492953Z ##[debug]sourceVersion=30a0844cc1312f7335475a17199134eebeda2f3e
+2021-02-19T20:11:02.0494028Z ##[debug]clean=True
+2021-02-19T20:11:02.0494886Z ##[debug]checkoutSubmodules=False
+2021-02-19T20:11:02.0495840Z ##[debug]checkoutNestedSubmodules=False
+2021-02-19T20:11:02.0496437Z ##[debug]exposeCred=False
+2021-02-19T20:11:02.0496989Z ##[debug]fetchDepth=0
+2021-02-19T20:11:02.0497791Z ##[debug]gitLfsSupport=False
+2021-02-19T20:11:02.0498979Z ##[debug]acceptUntrustedCerts=False
+2021-02-19T20:11:02.0499902Z ##[debug]schannelSslBackend=False
+2021-02-19T20:11:02.0500906Z ##[debug]Which: 'git'
+2021-02-19T20:11:02.0501834Z ##[debug]Location: '{matches.First()}'
+2021-02-19T20:11:02.0502456Z ##[debug]Get git version.
+2021-02-19T20:11:02.0502904Z ##[command]git version
+2021-02-19T20:11:02.0503561Z ##[debug]Starting process:
+2021-02-19T20:11:02.0504344Z ##[debug]  File name: '/usr/bin/git'
+2021-02-19T20:11:02.0506625Z ##[debug]  Arguments: 'version'
+2021-02-19T20:11:02.0507470Z ##[debug]  Working directory: '/home/vsts/work'
+2021-02-19T20:11:02.0508282Z ##[debug]  Require exit code zero: 'False'
+2021-02-19T20:11:02.0509174Z ##[debug]  Encoding web name:  ; code page: ''
+2021-02-19T20:11:02.0510076Z ##[debug]  Force kill process on cancellation: 'False'
+2021-02-19T20:11:02.0511140Z ##[debug]  Redirected STDIN: 'False'
+2021-02-19T20:11:02.0511966Z ##[debug]  Persist current code page: 'False'
+2021-02-19T20:11:02.0512808Z ##[debug]  Keep redirected STDIN open: 'False'
+2021-02-19T20:11:02.0513791Z ##[debug]  High priority process: 'False'
+2021-02-19T20:11:02.0514464Z ##[debug]Updated oom_score_adj to 500 for PID: 4786.
+2021-02-19T20:11:02.0515169Z ##[debug]Process started with process id 4786, waiting for process exit.
+2021-02-19T20:11:02.0515834Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:02.0516827Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:02.0517509Z ##[debug]Exited process 4786 with exit code 0
+2021-02-19T20:11:02.0518216Z ##[debug]Finished process 4786 with exit code 0, and elapsed time 00:00:00.0308645.
+2021-02-19T20:11:02.0518780Z git version 2.29.0
+2021-02-19T20:11:02.0519332Z ##[debug]Detect git version: 2.29.0.
+2021-02-19T20:11:02.0520177Z ##[debug]Which: 'git-lfs'
+2021-02-19T20:11:02.0521105Z ##[debug]Location: '{matches.First()}'
+2021-02-19T20:11:02.0522039Z ##[debug]Get git-lfs version.
+2021-02-19T20:11:02.0522511Z ##[command]git lfs version
+2021-02-19T20:11:02.0523272Z ##[debug]Starting process:
+2021-02-19T20:11:02.0524116Z ##[debug]  File name: '/usr/bin/git'
+2021-02-19T20:11:02.0524875Z ##[debug]  Arguments: 'lfs version'
+2021-02-19T20:11:02.0525658Z ##[debug]  Working directory: '/home/vsts/work'
+2021-02-19T20:11:02.0526454Z ##[debug]  Require exit code zero: 'False'
+2021-02-19T20:11:02.0527242Z ##[debug]  Encoding web name:  ; code page: ''
+2021-02-19T20:11:02.0528254Z ##[debug]  Force kill process on cancellation: 'False'
+2021-02-19T20:11:02.0530457Z ##[debug]  Redirected STDIN: 'False'
+2021-02-19T20:11:02.0531380Z ##[debug]  Persist current code page: 'False'
+2021-02-19T20:11:02.0532765Z ##[debug]  Keep redirected STDIN open: 'False'
+2021-02-19T20:11:02.0533712Z ##[debug]  High priority process: 'False'
+2021-02-19T20:11:02.0534784Z ##[debug]Updated oom_score_adj to 500 for PID: 4789.
+2021-02-19T20:11:02.0535693Z ##[debug]Process started with process id 4789, waiting for process exit.
+2021-02-19T20:11:03.0369052Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0408197Z ##[debug]Exited process 4789 with exit code 0
+2021-02-19T20:11:03.0434520Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0436681Z ##[debug]Finished process 4789 with exit code 0, and elapsed time 00:00:00.1257168.
+2021-02-19T20:11:03.0438777Z git-lfs/2.13.2 (GitHub; linux amd64; go 1.15.5)
+2021-02-19T20:11:03.0439926Z ##[debug]Detect git-lfs version: '2.13.2'.
+2021-02-19T20:11:03.0441179Z ##[debug]Set git useragent to: git/2.29.0 (vsts-agent-git/2.182.1).
+2021-02-19T20:11:03.0442552Z ##[debug]Checking if the repo on /home/vsts/work/1/s matches the expected repository origin URL. expected Url: https://github.com/davidjtgriffiths/terraform-azure
+2021-02-19T20:11:03.0445381Z ##[debug]Repository is not found since '.git' directory does not exist under. /home/vsts/work/1/s
+2021-02-19T20:11:03.0446960Z ##[debug]Init git repository at: /home/vsts/work/1/s.
+2021-02-19T20:11:03.0447986Z ##[command]git init "/home/vsts/work/1/s"
+2021-02-19T20:11:03.0449117Z ##[debug]Starting process:
+2021-02-19T20:11:03.0451295Z ##[debug]  File name: '/usr/bin/git'
+2021-02-19T20:11:03.0452508Z ##[debug]  Arguments: 'init "/home/vsts/work/1/s"'
+2021-02-19T20:11:03.0453744Z ##[debug]  Working directory: '/home/vsts/work/1/s'
+2021-02-19T20:11:03.0454948Z ##[debug]  Require exit code zero: 'False'
+2021-02-19T20:11:03.0456161Z ##[debug]  Encoding web name:  ; code page: ''
+2021-02-19T20:11:03.0457392Z ##[debug]  Force kill process on cancellation: 'False'
+2021-02-19T20:11:03.0458747Z ##[debug]  Redirected STDIN: 'False'
+2021-02-19T20:11:03.0459917Z ##[debug]  Persist current code page: 'False'
+2021-02-19T20:11:03.0461098Z ##[debug]  Keep redirected STDIN open: 'False'
+2021-02-19T20:11:03.0462251Z ##[debug]  High priority process: 'False'
+2021-02-19T20:11:03.0463280Z ##[debug]Updated oom_score_adj to 500 for PID: 4800.
+2021-02-19T20:11:03.0464269Z ##[debug]Process started with process id 4800, waiting for process exit.
+2021-02-19T20:11:03.0465132Z Initialized empty Git repository in /home/vsts/work/1/s/.git/
+2021-02-19T20:11:03.0466134Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0467965Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0469008Z ##[debug]Exited process 4800 with exit code 0
+2021-02-19T20:11:03.0470330Z ##[debug]Finished process 4800 with exit code 0, and elapsed time 00:00:00.0098575.
+2021-02-19T20:11:03.0472250Z ##[debug]Add git remote: origin to url: https://github.com/davidjtgriffiths/terraform-azure for repository under: /home/vsts/work/1/s.
+2021-02-19T20:11:03.0473924Z ##[command]git remote add origin https://github.com/davidjtgriffiths/terraform-azure
+2021-02-19T20:11:03.0474902Z ##[debug]Starting process:
+2021-02-19T20:11:03.0476012Z ##[debug]  File name: '/usr/bin/git'
+2021-02-19T20:11:03.0477266Z ##[debug]  Arguments: 'remote add origin https://github.com/davidjtgriffiths/terraform-azure'
+2021-02-19T20:11:03.0478546Z ##[debug]  Working directory: '/home/vsts/work/1/s'
+2021-02-19T20:11:03.0480405Z ##[debug]  Require exit code zero: 'False'
+2021-02-19T20:11:03.0482606Z ##[debug]  Encoding web name:  ; code page: ''
+2021-02-19T20:11:03.0484273Z ##[debug]  Force kill process on cancellation: 'False'
+2021-02-19T20:11:03.0498903Z ##[debug]  Redirected STDIN: 'False'
+2021-02-19T20:11:03.0500749Z ##[debug]  Persist current code page: 'False'
+2021-02-19T20:11:03.0502735Z ##[debug]  Keep redirected STDIN open: 'False'
+2021-02-19T20:11:03.0504172Z ##[debug]  High priority process: 'False'
+2021-02-19T20:11:03.0505889Z ##[debug]Updated oom_score_adj to 500 for PID: 4801.
+2021-02-19T20:11:03.0506910Z ##[debug]Process started with process id 4801, waiting for process exit.
+2021-02-19T20:11:03.0507892Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0508888Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0510063Z ##[debug]Exited process 4801 with exit code 0
+2021-02-19T20:11:03.0511087Z ##[debug]Finished process 4801 with exit code 0, and elapsed time 00:00:00.0034751.
+2021-02-19T20:11:03.0515923Z ##[debug]Processed: ##vso[task.setprogress value=0]Starting fetch...
+2021-02-19T20:11:03.0517496Z ##[debug]Disable git auto garbage collection.
+2021-02-19T20:11:03.0518357Z ##[command]git config gc.auto 0
+2021-02-19T20:11:03.0519144Z ##[debug]Starting process:
+2021-02-19T20:11:03.0520336Z ##[debug]  File name: '/usr/bin/git'
+2021-02-19T20:11:03.0521754Z ##[debug]  Arguments: 'config gc.auto 0'
+2021-02-19T20:11:03.0522986Z ##[debug]  Working directory: '/home/vsts/work/1/s'
+2021-02-19T20:11:03.0525006Z ##[debug]  Require exit code zero: 'False'
+2021-02-19T20:11:03.0526321Z ##[debug]  Encoding web name:  ; code page: ''
+2021-02-19T20:11:03.0527943Z ##[debug]  Force kill process on cancellation: 'False'
+2021-02-19T20:11:03.0529933Z ##[debug]  Redirected STDIN: 'False'
+2021-02-19T20:11:03.0531754Z ##[debug]  Persist current code page: 'False'
+2021-02-19T20:11:03.0533670Z ##[debug]  Keep redirected STDIN open: 'False'
+2021-02-19T20:11:03.0535215Z ##[debug]  High priority process: 'False'
+2021-02-19T20:11:03.0536269Z ##[debug]Updated oom_score_adj to 500 for PID: 4802.
+2021-02-19T20:11:03.0537288Z ##[debug]Process started with process id 4802, waiting for process exit.
+2021-02-19T20:11:03.0538620Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0539731Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0540695Z ##[debug]Exited process 4802 with exit code 0
+2021-02-19T20:11:03.0541886Z ##[debug]Finished process 4802 with exit code 0, and elapsed time 00:00:00.0022354.
+2021-02-19T20:11:03.0543327Z ##[debug]Checking git config http.https://github.com/davidjtgriffiths/terraform-azure.extraheader exist or not
+2021-02-19T20:11:03.0544610Z ##[command]git config --get-all http.https://github.com/davidjtgriffiths/terraform-azure.extraheader
+2021-02-19T20:11:03.0545699Z ##[debug]Starting process:
+2021-02-19T20:11:03.0546990Z ##[debug]  File name: '/usr/bin/git'
+2021-02-19T20:11:03.0548236Z ##[debug]  Arguments: 'config --get-all http.https://github.com/davidjtgriffiths/terraform-azure.extraheader'
+2021-02-19T20:11:03.0549477Z ##[debug]  Working directory: '/home/vsts/work/1/s'
+2021-02-19T20:11:03.0550639Z ##[debug]  Require exit code zero: 'False'
+2021-02-19T20:11:03.0551811Z ##[debug]  Encoding web name:  ; code page: ''
+2021-02-19T20:11:03.0553186Z ##[debug]  Force kill process on cancellation: 'False'
+2021-02-19T20:11:03.0554378Z ##[debug]  Redirected STDIN: 'False'
+2021-02-19T20:11:03.0555875Z ##[debug]  Persist current code page: 'False'
+2021-02-19T20:11:03.0557444Z ##[debug]  Keep redirected STDIN open: 'False'
+2021-02-19T20:11:03.0558782Z ##[debug]  High priority process: 'False'
+2021-02-19T20:11:03.0559780Z ##[debug]Updated oom_score_adj to 500 for PID: 4803.
+2021-02-19T20:11:03.0560930Z ##[debug]Process started with process id 4803, waiting for process exit.
+2021-02-19T20:11:03.0561862Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0562756Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0563821Z ##[debug]Exited process 4803 with exit code 1
+2021-02-19T20:11:03.0564960Z ##[debug]Finished process 4803 with exit code 1, and elapsed time 00:00:00.0025343.
+2021-02-19T20:11:03.0566216Z ##[debug]Checking git config http.proxy exist or not
+2021-02-19T20:11:03.0568009Z ##[command]git config --get-all http.proxy
+2021-02-19T20:11:03.0568902Z ##[debug]Starting process:
+2021-02-19T20:11:03.0570417Z ##[debug]  File name: '/usr/bin/git'
+2021-02-19T20:11:03.0572096Z ##[debug]  Arguments: 'config --get-all http.proxy'
+2021-02-19T20:11:03.0573246Z ##[debug]  Working directory: '/home/vsts/work/1/s'
+2021-02-19T20:11:03.0574387Z ##[debug]  Require exit code zero: 'False'
+2021-02-19T20:11:03.0575529Z ##[debug]  Encoding web name:  ; code page: ''
+2021-02-19T20:11:03.0576693Z ##[debug]  Force kill process on cancellation: 'False'
+2021-02-19T20:11:03.0578005Z ##[debug]  Redirected STDIN: 'False'
+2021-02-19T20:11:03.0579435Z ##[debug]  Persist current code page: 'False'
+2021-02-19T20:11:03.0580989Z ##[debug]  Keep redirected STDIN open: 'False'
+2021-02-19T20:11:03.0583810Z ##[debug]  High priority process: 'False'
+2021-02-19T20:11:03.0585359Z ##[debug]Updated oom_score_adj to 500 for PID: 4804.
+2021-02-19T20:11:03.0586739Z ##[debug]Process started with process id 4804, waiting for process exit.
+2021-02-19T20:11:03.0588062Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0589001Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0589939Z ##[debug]Exited process 4804 with exit code 1
+2021-02-19T20:11:03.0591317Z ##[debug]Finished process 4804 with exit code 1, and elapsed time 00:00:00.0014820.
+2021-02-19T20:11:03.0592334Z ##[debug]Set git config http.version HTTP/1.1
+2021-02-19T20:11:03.0593120Z ##[command]git config http.version HTTP/1.1
+2021-02-19T20:11:03.0593891Z ##[debug]Starting process:
+2021-02-19T20:11:03.0595016Z ##[debug]  File name: '/usr/bin/git'
+2021-02-19T20:11:03.0596654Z ##[debug]  Arguments: 'config http.version HTTP/1.1'
+2021-02-19T20:11:03.0598284Z ##[debug]  Working directory: '/home/vsts/work/1/s'
+2021-02-19T20:11:03.0599814Z ##[debug]  Require exit code zero: 'False'
+2021-02-19T20:11:03.0602391Z ##[debug]  Encoding web name:  ; code page: ''
+2021-02-19T20:11:03.0603922Z ##[debug]  Force kill process on cancellation: 'False'
+2021-02-19T20:11:03.0605361Z ##[debug]  Redirected STDIN: 'False'
+2021-02-19T20:11:03.0606774Z ##[debug]  Persist current code page: 'False'
+2021-02-19T20:11:03.0609093Z ##[debug]  Keep redirected STDIN open: 'False'
+2021-02-19T20:11:03.0611419Z ##[debug]  High priority process: 'False'
+2021-02-19T20:11:03.0613183Z ##[debug]Updated oom_score_adj to 500 for PID: 4805.
+2021-02-19T20:11:03.0614800Z ##[debug]Process started with process id 4805, waiting for process exit.
+2021-02-19T20:11:03.0616478Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0618184Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:03.0619245Z ##[debug]Exited process 4805 with exit code 0
+2021-02-19T20:11:03.0620591Z ##[debug]Finished process 4805 with exit code 0, and elapsed time 00:00:00.0026350.
+2021-02-19T20:11:03.0625150Z ##[debug]Processed: ##vso[task.setsecret]***
+2021-02-19T20:11:03.0627057Z ##[debug]fetchDepth : 0
+2021-02-19T20:11:03.0628347Z ##[debug]fetchByCommit : True
+2021-02-19T20:11:03.0629651Z ##[debug]sourceVersion : 30a0844cc1312f7335475a17199134eebeda2f3e
+2021-02-19T20:11:03.0631010Z ##[debug]Fetch git repository at: /home/vsts/work/1/s remote: origin.
+2021-02-19T20:11:03.0632911Z ##[command]git -c http.extraheader="AUTHORIZATION: basic ***" fetch --force --tags --prune --progress --no-recurse-submodules origin
+2021-02-19T20:11:03.0634848Z ##[debug]Starting process:
+2021-02-19T20:11:03.0636799Z ##[debug]  File name: '/usr/bin/git'
+2021-02-19T20:11:03.0638805Z ##[debug]  Arguments: '-c http.extraheader="AUTHORIZATION: basic ***" fetch --force --tags --prune --progress --no-recurse-submodules origin'
+2021-02-19T20:11:03.0640850Z ##[debug]  Working directory: '/home/vsts/work/1/s'
+2021-02-19T20:11:03.0642443Z ##[debug]  Require exit code zero: 'False'
+2021-02-19T20:11:03.0644009Z ##[debug]  Encoding web name:  ; code page: ''
+2021-02-19T20:11:03.0645663Z ##[debug]  Force kill process on cancellation: 'False'
+2021-02-19T20:11:03.0647170Z ##[debug]  Redirected STDIN: 'False'
+2021-02-19T20:11:03.0648722Z ##[debug]  Persist current code page: 'False'
+2021-02-19T20:11:03.0650121Z ##[debug]  Keep redirected STDIN open: 'False'
+2021-02-19T20:11:03.0651451Z ##[debug]  High priority process: 'False'
+2021-02-19T20:11:03.0652519Z ##[debug]Updated oom_score_adj to 500 for PID: 4806.
+2021-02-19T20:11:03.0653552Z ##[debug]Process started with process id 4806, waiting for process exit.
+2021-02-19T20:11:04.0413658Z remote: Enumerating objects: 66, done.        
+2021-02-19T20:11:04.0417009Z remote: Counting objects:   1% (1/66)        
+2021-02-19T20:11:04.0417824Z remote: Counting objects:   3% (2/66)        
+2021-02-19T20:11:04.0418785Z remote: Counting objects:   4% (3/66)        
+2021-02-19T20:11:04.0420175Z remote: Counting objects:   6% (4/66)        
+2021-02-19T20:11:04.0420924Z remote: Counting objects:   7% (5/66)        
+2021-02-19T20:11:04.0421602Z remote: Counting objects:   9% (6/66)        
+2021-02-19T20:11:04.0422249Z remote: Counting objects:  10% (7/66)        
+2021-02-19T20:11:04.0422898Z remote: Counting objects:  12% (8/66)        
+2021-02-19T20:11:04.0423569Z remote: Counting objects:  13% (9/66)        
+2021-02-19T20:11:04.0424409Z remote: Counting objects:  15% (10/66)        
+2021-02-19T20:11:04.0425085Z remote: Counting objects:  16% (11/66)        
+2021-02-19T20:11:04.0425746Z remote: Counting objects:  18% (12/66)        
+2021-02-19T20:11:04.0426428Z remote: Counting objects:  19% (13/66)        
+2021-02-19T20:11:04.0427623Z remote: Counting objects:  21% (14/66)        
+2021-02-19T20:11:04.0428276Z remote: Counting objects:  22% (15/66)        
+2021-02-19T20:11:04.0428919Z remote: Counting objects:  24% (16/66)        
+2021-02-19T20:11:04.0429577Z remote: Counting objects:  25% (17/66)        
+2021-02-19T20:11:04.0430412Z remote: Counting objects:  27% (18/66)        
+2021-02-19T20:11:04.0431249Z remote: Counting objects:  28% (19/66)        
+2021-02-19T20:11:04.0431901Z remote: Counting objects:  30% (20/66)        
+2021-02-19T20:11:04.0432556Z remote: Counting objects:  31% (21/66)        
+2021-02-19T20:11:04.0433379Z remote: Counting objects:  33% (22/66)        
+2021-02-19T20:11:04.0434238Z remote: Counting objects:  34% (23/66)        
+2021-02-19T20:11:04.0434899Z remote: Counting objects:  36% (24/66)        
+2021-02-19T20:11:04.0435635Z remote: Counting objects:  37% (25/66)        
+2021-02-19T20:11:04.0436579Z remote: Counting objects:  39% (26/66)        
+2021-02-19T20:11:04.0437221Z remote: Counting objects:  40% (27/66)        
+2021-02-19T20:11:04.0437850Z remote: Counting objects:  42% (28/66)        
+2021-02-19T20:11:04.0438663Z remote: Counting objects:  43% (29/66)        
+2021-02-19T20:11:04.0439337Z remote: Counting objects:  45% (30/66)        
+2021-02-19T20:11:04.0439980Z remote: Counting objects:  46% (31/66)        
+2021-02-19T20:11:04.0440626Z remote: Counting objects:  48% (32/66)        
+2021-02-19T20:11:04.0441283Z remote: Counting objects:  50% (33/66)        
+2021-02-19T20:11:04.0442114Z remote: Counting objects:  51% (34/66)        
+2021-02-19T20:11:04.0442931Z remote: Counting objects:  53% (35/66)        
+2021-02-19T20:11:04.0443748Z remote: Counting objects:  54% (36/66)        
+2021-02-19T20:11:04.0445327Z remote: Counting objects:  56% (37/66)        
+2021-02-19T20:11:04.0446187Z remote: Counting objects:  57% (38/66)        
+2021-02-19T20:11:04.0447014Z remote: Counting objects:  59% (39/66)        
+2021-02-19T20:11:04.0448160Z remote: Counting objects:  60% (40/66)        
+2021-02-19T20:11:04.0449309Z remote: Counting objects:  62% (41/66)        
+2021-02-19T20:11:04.0450611Z remote: Counting objects:  63% (42/66)        
+2021-02-19T20:11:04.0451531Z remote: Counting objects:  65% (43/66)        
+2021-02-19T20:11:04.0452254Z remote: Counting objects:  66% (44/66)        
+2021-02-19T20:11:04.0453105Z remote: Counting objects:  68% (45/66)        
+2021-02-19T20:11:04.0454087Z remote: Counting objects:  69% (46/66)        
+2021-02-19T20:11:04.0454953Z remote: Counting objects:  71% (47/66)        
+2021-02-19T20:11:04.0455603Z remote: Counting objects:  72% (48/66)        
+2021-02-19T20:11:04.0456235Z remote: Counting objects:  74% (49/66)        
+2021-02-19T20:11:04.0456864Z remote: Counting objects:  75% (50/66)        
+2021-02-19T20:11:04.0457496Z remote: Counting objects:  77% (51/66)        
+2021-02-19T20:11:04.0458123Z remote: Counting objects:  78% (52/66)        
+2021-02-19T20:11:04.0458771Z remote: Counting objects:  80% (53/66)        
+2021-02-19T20:11:04.0459399Z remote: Counting objects:  81% (54/66)        
+2021-02-19T20:11:04.0460029Z remote: Counting objects:  83% (55/66)        
+2021-02-19T20:11:04.0460703Z remote: Counting objects:  84% (56/66)        
+2021-02-19T20:11:04.0461782Z remote: Counting objects:  86% (57/66)        
+2021-02-19T20:11:04.0462447Z remote: Counting objects:  87% (58/66)        
+2021-02-19T20:11:04.0463091Z remote: Counting objects:  89% (59/66)        
+2021-02-19T20:11:04.0463741Z remote: Counting objects:  90% (60/66)        
+2021-02-19T20:11:04.0464780Z remote: Counting objects:  92% (61/66)        
+2021-02-19T20:11:04.0465421Z remote: Counting objects:  93% (62/66)        
+2021-02-19T20:11:04.0466276Z remote: Counting objects:  95% (63/66)        
+2021-02-19T20:11:04.0466929Z remote: Counting objects:  96% (64/66)        
+2021-02-19T20:11:04.0467588Z remote: Counting objects:  98% (65/66)        
+2021-02-19T20:11:04.0469802Z remote: Counting objects: 100% (66/66)        
+2021-02-19T20:11:04.0470737Z remote: Counting objects: 100% (66/66), done.        
+2021-02-19T20:11:04.0472007Z remote: Compressing objects:   2% (1/47)        
+2021-02-19T20:11:04.0512179Z remote: Compressing objects:   4% (2/47)        
+2021-02-19T20:11:04.0513967Z remote: Compressing objects:   6% (3/47)        
+2021-02-19T20:11:04.0514802Z remote: Compressing objects:   8% (4/47)        
+2021-02-19T20:11:04.0515714Z remote: Compressing objects:  10% (5/47)        
+2021-02-19T20:11:04.0517125Z remote: Compressing objects:  12% (6/47)        
+2021-02-19T20:11:04.0517811Z remote: Compressing objects:  14% (7/47)        
+2021-02-19T20:11:04.0518518Z remote: Compressing objects:  17% (8/47)        
+2021-02-19T20:11:04.0519206Z remote: Compressing objects:  19% (9/47)        
+2021-02-19T20:11:04.0519895Z remote: Compressing objects:  21% (10/47)        
+2021-02-19T20:11:04.0520580Z remote: Compressing objects:  23% (11/47)        
+2021-02-19T20:11:04.0521268Z remote: Compressing objects:  25% (12/47)        
+2021-02-19T20:11:04.0521984Z remote: Compressing objects:  27% (13/47)        
+2021-02-19T20:11:04.0522679Z remote: Compressing objects:  29% (14/47)        
+2021-02-19T20:11:04.0523523Z remote: Compressing objects:  31% (15/47)        
+2021-02-19T20:11:04.0524205Z remote: Compressing objects:  34% (16/47)        
+2021-02-19T20:11:04.0524891Z remote: Compressing objects:  36% (17/47)        
+2021-02-19T20:11:04.0525570Z remote: Compressing objects:  38% (18/47)        
+2021-02-19T20:11:04.0526525Z remote: Compressing objects:  40% (19/47)        
+2021-02-19T20:11:04.0527213Z remote: Compressing objects:  42% (20/47)        
+2021-02-19T20:11:04.0527896Z remote: Compressing objects:  44% (21/47)        
+2021-02-19T20:11:04.0528602Z remote: Compressing objects:  46% (22/47)        
+2021-02-19T20:11:04.0529285Z remote: Compressing objects:  48% (23/47)        
+2021-02-19T20:11:04.0530639Z remote: Compressing objects:  51% (24/47)        
+2021-02-19T20:11:04.0531541Z remote: Compressing objects:  53% (25/47)        
+2021-02-19T20:11:04.0532211Z remote: Compressing objects:  55% (26/47)        
+2021-02-19T20:11:04.0532906Z remote: Compressing objects:  57% (27/47)        
+2021-02-19T20:11:04.0533733Z remote: Compressing objects:  59% (28/47)        
+2021-02-19T20:11:04.0534400Z remote: Compressing objects:  61% (29/47)        
+2021-02-19T20:11:04.0535230Z remote: Compressing objects:  63% (30/47)        
+2021-02-19T20:11:04.0536170Z remote: Compressing objects:  65% (31/47)        
+2021-02-19T20:11:04.0536975Z remote: Compressing objects:  68% (32/47)        
+2021-02-19T20:11:04.0537893Z remote: Compressing objects:  70% (33/47)        
+2021-02-19T20:11:04.0539325Z remote: Compressing objects:  72% (34/47)        
+2021-02-19T20:11:04.0541553Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:04.0542852Z remote: Compressing objects:  74% (35/47)        
+2021-02-19T20:11:04.0543719Z ##[debug]Exited process 4806 with exit code 0
+2021-02-19T20:11:04.0544598Z remote: Compressing objects:  76% (36/47)        
+2021-02-19T20:11:04.0545433Z remote: Compressing objects:  78% (37/47)        
+2021-02-19T20:11:04.0546279Z remote: Compressing objects:  80% (38/47)        
+2021-02-19T20:11:04.0547119Z remote: Compressing objects:  82% (39/47)        
+2021-02-19T20:11:04.0548933Z remote: Compressing objects:  85% (40/47)        
+2021-02-19T20:11:04.0549665Z remote: Compressing objects:  87% (41/47)        
+2021-02-19T20:11:04.0550739Z remote: Compressing objects:  89% (42/47)        
+2021-02-19T20:11:04.0551463Z remote: Compressing objects:  91% (43/47)        
+2021-02-19T20:11:04.0552218Z remote: Compressing objects:  93% (44/47)        
+2021-02-19T20:11:04.0552915Z remote: Compressing objects:  95% (45/47)        
+2021-02-19T20:11:04.0554180Z remote: Compressing objects:  97% (46/47)        
+2021-02-19T20:11:04.0554876Z remote: Compressing objects: 100% (47/47)        
+2021-02-19T20:11:04.0555737Z remote: Compressing objects: 100% (47/47), done.        
+2021-02-19T20:11:04.0557226Z remote: Total 66 (delta 30), reused 52 (delta 18), pack-reused 0        
+2021-02-19T20:11:04.0558266Z From https://github.com/davidjtgriffiths/terraform-azure
+2021-02-19T20:11:04.0559190Z  * [new branch]      main       -> origin/main
+2021-02-19T20:11:04.0560067Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:04.0561123Z ##[debug]Finished process 4806 with exit code 0, and elapsed time 00:00:01.2552505.
+2021-02-19T20:11:04.1080328Z ##[debug]Processed: ##vso[telemetry.publish area=AzurePipelinesAgent;feature=GitFetch]{"ElapsedTimeMilliseconds":"1257","RefSpec":"","RemoteName":"origin","FetchDepth":"0","ExitCode":"0","Options":"--force --tags --prune --progress --no-recurse-submodules origin "}
+2021-02-19T20:11:04.1087290Z ##[debug]Fetch git repository at: /home/vsts/work/1/s remote: origin.
+2021-02-19T20:11:04.1108044Z ##[command]git -c http.extraheader="AUTHORIZATION: basic ***" fetch --force --tags --prune --progress --no-recurse-submodules origin +30a0844cc1312f7335475a17199134eebeda2f3e:refs/remotes/origin/30a0844cc1312f7335475a17199134eebeda2f3e
+2021-02-19T20:11:04.1109792Z ##[debug]Starting process:
+2021-02-19T20:11:04.1111090Z ##[debug]  File name: '/usr/bin/git'
+2021-02-19T20:11:04.1112991Z ##[debug]  Arguments: '-c http.extraheader="AUTHORIZATION: basic ***" fetch --force --tags --prune --progress --no-recurse-submodules origin +30a0844cc1312f7335475a17199134eebeda2f3e:refs/remotes/origin/30a0844cc1312f7335475a17199134eebeda2f3e'
+2021-02-19T20:11:04.1114975Z ##[debug]  Working directory: '/home/vsts/work/1/s'
+2021-02-19T20:11:04.1116220Z ##[debug]  Require exit code zero: 'False'
+2021-02-19T20:11:04.1117624Z ##[debug]  Encoding web name:  ; code page: ''
+2021-02-19T20:11:04.1119027Z ##[debug]  Force kill process on cancellation: 'False'
+2021-02-19T20:11:04.1120665Z ##[debug]  Redirected STDIN: 'False'
+2021-02-19T20:11:04.1122050Z ##[debug]  Persist current code page: 'False'
+2021-02-19T20:11:04.1123573Z ##[debug]  Keep redirected STDIN open: 'False'
+2021-02-19T20:11:04.1124900Z ##[debug]  High priority process: 'False'
+2021-02-19T20:11:04.1125893Z ##[debug]Updated oom_score_adj to 500 for PID: 4823.
+2021-02-19T20:11:04.1126872Z ##[debug]Process started with process id 4823, waiting for process exit.
+2021-02-19T20:11:04.2363125Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:04.2365051Z From https://github.com/davidjtgriffiths/terraform-azure
+2021-02-19T20:11:04.2366463Z  * [new ref]         30a0844cc1312f7335475a17199134eebeda2f3e -> origin/30a0844cc1312f7335475a17199134eebeda2f3e
+2021-02-19T20:11:04.2367604Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:04.2368793Z ##[debug]Exited process 4823 with exit code 0
+2021-02-19T20:11:04.2370567Z ##[debug]Finished process 4823 with exit code 0, and elapsed time 00:00:00.8133965.
+2021-02-19T20:11:04.2731748Z ##[debug]Processed: ##vso[telemetry.publish area=AzurePipelinesAgent;feature=GitFetch]{"ElapsedTimeMilliseconds":"813","RefSpec":"+30a0844cc1312f7335475a17199134eebeda2f3e:refs/remotes/origin/30a0844cc1312f7335475a17199134eebeda2f3e","RemoteName":"origin","FetchDepth":"0","ExitCode":"0","Options":"--force --tags --prune --progress --no-recurse-submodules origin +30a0844cc1312f7335475a17199134eebeda2f3e:refs/remotes/origin/30a0844cc1312f7335475a17199134eebeda2f3e"}
+2021-02-19T20:11:04.2735544Z ##[debug]Processed: ##vso[task.setprogress value=80]Starting checkout...
+2021-02-19T20:11:04.2736686Z ##[debug]refFetchedByCommit : 
+2021-02-19T20:11:04.2737516Z ##[debug]Checkout 30a0844cc1312f7335475a17199134eebeda2f3e.
+2021-02-19T20:11:04.2738934Z ##[command]git checkout --progress --force 30a0844cc1312f7335475a17199134eebeda2f3e
+2021-02-19T20:11:04.2739886Z ##[debug]Starting process:
+2021-02-19T20:11:04.2741543Z ##[debug]  File name: '/usr/bin/git'
+2021-02-19T20:11:04.2742706Z ##[debug]  Arguments: 'checkout --progress --force 30a0844cc1312f7335475a17199134eebeda2f3e'
+2021-02-19T20:11:04.2744005Z ##[debug]  Working directory: '/home/vsts/work/1/s'
+2021-02-19T20:11:04.2745614Z ##[debug]  Require exit code zero: 'False'
+2021-02-19T20:11:04.2746708Z ##[debug]  Encoding web name:  ; code page: ''
+2021-02-19T20:11:04.2747936Z ##[debug]  Force kill process on cancellation: 'False'
+2021-02-19T20:11:04.2749286Z ##[debug]  Redirected STDIN: 'False'
+2021-02-19T20:11:04.2750240Z ##[debug]  Persist current code page: 'False'
+2021-02-19T20:11:04.2751217Z ##[debug]  Keep redirected STDIN open: 'False'
+2021-02-19T20:11:04.2752168Z ##[debug]  High priority process: 'False'
+2021-02-19T20:11:04.2753199Z ##[debug]Updated oom_score_adj to 500 for PID: 4831.
+2021-02-19T20:11:04.2754060Z ##[debug]Process started with process id 4831, waiting for process exit.
+2021-02-19T20:11:04.2754872Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:04.2755946Z Note: switching to '30a0844cc1312f7335475a17199134eebeda2f3e'.
+2021-02-19T20:11:04.2756337Z 
+2021-02-19T20:11:04.2757077Z You are in 'detached HEAD' state. You can look around, make experimental
+2021-02-19T20:11:04.2757732Z changes and commit them, and you can discard any commits you make in this
+2021-02-19T20:11:04.2758339Z state without impacting any branches by switching back to a branch.
+2021-02-19T20:11:04.2758681Z 
+2021-02-19T20:11:04.2759555Z If you want to create a new branch to retain commits you create, you may
+2021-02-19T20:11:04.2760339Z do so (now or later) by using -c with the switch command. Example:
+2021-02-19T20:11:04.2760894Z 
+2021-02-19T20:11:04.2761726Z   git switch -c <new-branch-name>
+2021-02-19T20:11:04.2762044Z 
+2021-02-19T20:11:04.2762507Z Or undo this operation with:
+2021-02-19T20:11:04.2762806Z 
+2021-02-19T20:11:04.2763422Z   git switch -
+2021-02-19T20:11:04.2763894Z 
+2021-02-19T20:11:04.2764768Z Turn off this advice by setting config variable advice.detachedHead to false
+2021-02-19T20:11:04.2765118Z 
+2021-02-19T20:11:04.2765557Z HEAD is now at 30a0844 permissions!!!
+2021-02-19T20:11:04.2766222Z ##[debug]STDOUT/STDERR stream read finished.
+2021-02-19T20:11:04.2767003Z ##[debug]Exited process 4831 with exit code 0
+2021-02-19T20:11:04.2767981Z ##[debug]Finished process 4831 with exit code 0, and elapsed time 00:00:00.0051712.
+2021-02-19T20:11:04.2774818Z ##[debug]Processed: ##vso[task.settaskvariable variable=repository;issecret=False;]self
+2021-02-19T20:11:04.2776873Z ##[debug]Processed: ##vso[task.settaskvariable variable=preferPath;issecret=False;]true
+2021-02-19T20:11:04.2781699Z ##[debug]Processed: ##vso[task.settaskvariable variable=repoUrlWithCred;issecret=True;]***
+2021-02-19T20:11:04.2831398Z ##[section]Finishing: Checkout davidjtgriffiths/terraform-azure@main to s
+2021-02-19T20:11:04.2858692Z ##[debug]Evaluating condition for step: 'install'
+2021-02-19T20:11:04.2860868Z ##[debug]Evaluating: SucceededNode()
+2021-02-19T20:11:04.2861903Z ##[debug]Evaluating SucceededNode:
+2021-02-19T20:11:04.2863576Z ##[debug]=> True
+2021-02-19T20:11:04.2864666Z ##[debug]Result: True
+2021-02-19T20:11:04.2865851Z ##[section]Starting: install
+2021-02-19T20:11:04.2879597Z ==============================================================================
+2021-02-19T20:11:04.2880445Z Task         : Terraform tool installer
+2021-02-19T20:11:04.2880930Z Description  : Find in cache or download a specific version of Terraform and prepend it to the PATH
+2021-02-19T20:11:04.2892224Z Version      : 0.0.19
+2021-02-19T20:11:04.2893215Z Author       : Microsoft Corporation
+2021-02-19T20:11:04.2894223Z Help         : [Learn more about this task](https://aka.ms/AA5jd97)
+2021-02-19T20:11:04.2895318Z ==============================================================================
+2021-02-19T20:11:04.3739947Z ##[debug]Using node path: /home/vsts/agents/2.182.1/externals/node/bin/node
+2021-02-19T20:11:04.6941839Z ##[debug]agent.TempDirectory=/home/vsts/work/_temp
+2021-02-19T20:11:04.6967839Z ##[debug]loading inputs and endpoints
+2021-02-19T20:11:04.6972675Z ##[debug]loading INPUT_TERRAFORMVERSION
+2021-02-19T20:11:04.6983744Z ##[debug]loading ENDPOINT_AUTH_SYSTEMVSSCONNECTION
+2021-02-19T20:11:04.6991560Z ##[debug]loading ENDPOINT_AUTH_SCHEME_SYSTEMVSSCONNECTION
+2021-02-19T20:11:04.6993403Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_SYSTEMVSSCONNECTION_ACCESSTOKEN
+2021-02-19T20:11:04.7002105Z ##[debug]loading SECRET_SYSTEM_ACCESSTOKEN
+2021-02-19T20:11:04.7005969Z ##[debug]loaded 5
+2021-02-19T20:11:04.7029258Z ##[debug]Agent.ProxyUrl=undefined
+2021-02-19T20:11:04.7031309Z ##[debug]Agent.CAInfo=undefined
+2021-02-19T20:11:04.7032859Z ##[debug]Agent.ClientCert=undefined
+2021-02-19T20:11:04.7034870Z ##[debug]Agent.SkipCertValidation=undefined
+2021-02-19T20:11:04.7218462Z ##[debug]Agent.ProxyUrl=undefined
+2021-02-19T20:11:04.7220654Z ##[debug]Agent.CAInfo=undefined
+2021-02-19T20:11:04.7221970Z ##[debug]Agent.ClientCert=undefined
+2021-02-19T20:11:04.7223970Z ##[debug]check path : /home/vsts/work/_tasks/TerraformInstaller_a4789e5d-f6e8-431f-add9-379d640a883c/0.0.19/node_modules/azure-pipelines-tool-lib/lib.json
+2021-02-19T20:11:04.7225785Z ##[debug]adding resource file: /home/vsts/work/_tasks/TerraformInstaller_a4789e5d-f6e8-431f-add9-379d640a883c/0.0.19/node_modules/azure-pipelines-tool-lib/lib.json
+2021-02-19T20:11:04.7227408Z ##[debug]system.culture=en-US
+2021-02-19T20:11:04.7245631Z ##[debug]check path : /home/vsts/work/_tasks/TerraformInstaller_a4789e5d-f6e8-431f-add9-379d640a883c/0.0.19/task.json
+2021-02-19T20:11:04.7247670Z ##[debug]adding resource file: /home/vsts/work/_tasks/TerraformInstaller_a4789e5d-f6e8-431f-add9-379d640a883c/0.0.19/task.json
+2021-02-19T20:11:04.7249205Z ##[debug]system.culture=en-US
+2021-02-19T20:11:04.7259555Z ##[debug]terraformVersion=0.12.3
+2021-02-19T20:11:04.7263377Z ##[debug]cleaning: 0.12.3
+2021-02-19T20:11:04.7267336Z ##[debug]isExplicit: 0.12.3
+2021-02-19T20:11:04.7269328Z ##[debug]explicit? true
+2021-02-19T20:11:04.7270726Z ##[debug]Agent.Version=2.182.1
+2021-02-19T20:11:04.7272003Z ##[debug]Agent.ToolsDirectory=/opt/hostedtoolcache
+2021-02-19T20:11:04.7273486Z ##[debug]checking cache: /opt/hostedtoolcache/terraform/0.12.3/x64
+2021-02-19T20:11:04.7274611Z ##[debug]not found
+2021-02-19T20:11:04.7282135Z ##[debug]terraform-0.12.3-0ffb7b97-cf6d-4b79-be91-26dd6b6a5325.zip
+2021-02-19T20:11:04.7283533Z ##[debug]Agent.Version=2.182.1
+2021-02-19T20:11:04.7284744Z ##[debug]Agent.TempDirectory=/home/vsts/work/_temp
+2021-02-19T20:11:04.7288482Z ##[debug]testing directory '/home/vsts/work/_temp'
+2021-02-19T20:11:04.7320566Z Downloading: https://releases.hashicorp.com/terraform/0.12.3/terraform_0.12.3_linux_amd64.zip
+2021-02-19T20:11:04.7322809Z ##[debug]destination /home/vsts/work/_temp/terraform-0.12.3-0ffb7b97-cf6d-4b79-be91-26dd6b6a5325.zip
+2021-02-19T20:11:04.7324803Z ##[debug]downloading
+2021-02-19T20:11:04.8167784Z ##[debug]creating stream
+2021-02-19T20:11:05.0183556Z ##[debug]download complete
+2021-02-19T20:11:05.0220449Z Extracting archive
+2021-02-19T20:11:05.0226355Z ##[debug]Agent.Version=2.182.1
+2021-02-19T20:11:05.0231721Z ##[debug]Agent.TempDirectory=/home/vsts/work/_temp
+2021-02-19T20:11:05.0235790Z ##[debug]testing directory '/home/vsts/work/_temp/7b96ecbb-d84e-4d88-aace-7afc7aa62d13'
+2021-02-19T20:11:05.0239799Z ##[debug]testing directory '/home/vsts/work/_temp'
+2021-02-19T20:11:05.0244262Z ##[debug]mkdir '/home/vsts/work/_temp/7b96ecbb-d84e-4d88-aace-7afc7aa62d13'
+2021-02-19T20:11:05.0248411Z ##[debug]which 'unzip'
+2021-02-19T20:11:05.0251991Z ##[debug]found: '/usr/bin/unzip'
+2021-02-19T20:11:05.0255625Z ##[debug]which 'unzip'
+2021-02-19T20:11:05.0258372Z ##[debug]found: '/usr/bin/unzip'
+2021-02-19T20:11:05.0297818Z ##[debug]/usr/bin/unzip arg: /home/vsts/work/_temp/terraform-0.12.3-0ffb7b97-cf6d-4b79-be91-26dd6b6a5325.zip
+2021-02-19T20:11:05.0301320Z ##[debug]exec tool: /usr/bin/unzip
+2021-02-19T20:11:05.0303908Z ##[debug]arguments:
+2021-02-19T20:11:05.0306925Z ##[debug]   /home/vsts/work/_temp/terraform-0.12.3-0ffb7b97-cf6d-4b79-be91-26dd6b6a5325.zip
+2021-02-19T20:11:05.0309445Z [command]/usr/bin/unzip /home/vsts/work/_temp/terraform-0.12.3-0ffb7b97-cf6d-4b79-be91-26dd6b6a5325.zip
+2021-02-19T20:11:05.0492915Z Archive:  /home/vsts/work/_temp/terraform-0.12.3-0ffb7b97-cf6d-4b79-be91-26dd6b6a5325.zip
+2021-02-19T20:11:05.4942413Z   inflating: terraform               
+2021-02-19T20:11:05.4973679Z ##[debug]Exit code 0 received from tool '/usr/bin/unzip'
+2021-02-19T20:11:05.4978435Z ##[debug]STDIO streams have closed for tool '/usr/bin/unzip'
+2021-02-19T20:11:05.4989636Z Caching tool: terraform 0.12.3 x64
+2021-02-19T20:11:05.4993719Z ##[debug]source dir: /home/vsts/work/_temp/7b96ecbb-d84e-4d88-aace-7afc7aa62d13
+2021-02-19T20:11:05.4996018Z ##[debug]Agent.Version=2.182.1
+2021-02-19T20:11:05.4998085Z ##[debug]Agent.ToolsDirectory=/opt/hostedtoolcache
+2021-02-19T20:11:05.5005272Z ##[debug]destination /opt/hostedtoolcache/terraform/0.12.3/x64
+2021-02-19T20:11:05.5027698Z ##[debug]rm -rf /opt/hostedtoolcache/terraform/0.12.3/x64
+2021-02-19T20:11:05.5029606Z ##[debug]rm -rf /opt/hostedtoolcache/terraform/0.12.3/x64.complete
+2021-02-19T20:11:05.5032081Z ##[debug]testing directory '/opt/hostedtoolcache/terraform/0.12.3/x64'
+2021-02-19T20:11:05.5033623Z ##[debug]testing directory '/opt/hostedtoolcache/terraform/0.12.3'
+2021-02-19T20:11:05.5035171Z ##[debug]testing directory '/opt/hostedtoolcache/terraform'
+2021-02-19T20:11:05.5036777Z ##[debug]testing directory '/opt/hostedtoolcache'
+2021-02-19T20:11:05.5038664Z ##[debug]mkdir '/opt/hostedtoolcache/terraform'
+2021-02-19T20:11:05.5039912Z ##[debug]mkdir '/opt/hostedtoolcache/terraform/0.12.3'
+2021-02-19T20:11:05.5041008Z ##[debug]mkdir '/opt/hostedtoolcache/terraform/0.12.3/x64'
+2021-02-19T20:11:05.5462030Z ##[debug]Agent.Version=2.182.1
+2021-02-19T20:11:05.5463305Z ##[debug]Agent.ToolsDirectory=/opt/hostedtoolcache
+2021-02-19T20:11:05.5465444Z ##[debug]finished caching tool
+2021-02-19T20:11:05.5515593Z ##[debug]findPath: '/opt/hostedtoolcache/terraform/0.12.3/x64'
+2021-02-19T20:11:05.5517306Z ##[debug]findOptions.allowBrokenSymbolicLinks: 'false'
+2021-02-19T20:11:05.5518410Z ##[debug]findOptions.followSpecifiedSymbolicLink: 'true'
+2021-02-19T20:11:05.5519510Z ##[debug]findOptions.followSymbolicLinks: 'true'
+2021-02-19T20:11:05.5520805Z ##[debug]  /opt/hostedtoolcache/terraform/0.12.3/x64 (directory)
+2021-02-19T20:11:05.5531002Z ##[debug]  /opt/hostedtoolcache/terraform/0.12.3/x64/terraform (file)
+2021-02-19T20:11:05.5546286Z ##[debug]2 results
+2021-02-19T20:11:05.5548030Z ##[debug]patternRoot: '/opt/hostedtoolcache/terraform/0.12.3/x64'
+2021-02-19T20:11:05.5549742Z ##[debug]matchOptions.debug: 'false'
+2021-02-19T20:11:05.5550947Z ##[debug]matchOptions.nobrace: 'true'
+2021-02-19T20:11:05.5551982Z ##[debug]matchOptions.noglobstar: 'false'
+2021-02-19T20:11:05.5553487Z ##[debug]matchOptions.dot: 'true'
+2021-02-19T20:11:05.5554518Z ##[debug]matchOptions.noext: 'false'
+2021-02-19T20:11:05.5555696Z ##[debug]matchOptions.nocase: 'false'
+2021-02-19T20:11:05.5556731Z ##[debug]matchOptions.nonull: 'false'
+2021-02-19T20:11:05.5557729Z ##[debug]matchOptions.matchBase: 'false'
+2021-02-19T20:11:05.5558722Z ##[debug]matchOptions.nocomment: 'false'
+2021-02-19T20:11:05.5559979Z ##[debug]matchOptions.nonegate: 'false'
+2021-02-19T20:11:05.5560944Z ##[debug]matchOptions.flipNegate: 'false'
+2021-02-19T20:11:05.5562311Z ##[debug]pattern: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:05.5563242Z ##[debug]applying include pattern against original list
+2021-02-19T20:11:05.5564049Z ##[debug]1 matches
+2021-02-19T20:11:05.5564942Z ##[debug]1 final results
+2021-02-19T20:11:05.5566099Z ##[debug]set terraformLocation=/opt/hostedtoolcache/terraform/0.12.3/x64/terraform
+2021-02-19T20:11:05.5583298Z ##[debug]Processed: ##vso[task.setvariable variable=terraformLocation;issecret=false;]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform
+2021-02-19T20:11:05.5584658Z ##[debug]Agent.Version=2.182.1
+2021-02-19T20:11:05.5585454Z Prepending PATH environment variable with directory: /opt/hostedtoolcache/terraform/0.12.3/x64
+2021-02-19T20:11:05.5586976Z ##[debug]new Path: /opt/hostedtoolcache/terraform/0.12.3/x64:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/usr/share/rust/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+2021-02-19T20:11:05.5592583Z ##[debug]Processed: ##vso[task.prependpath]/opt/hostedtoolcache/terraform/0.12.3/x64
+2021-02-19T20:11:05.5593787Z Verifying Terraform installation...
+2021-02-19T20:11:05.5594889Z ##[debug]which 'terraform'
+2021-02-19T20:11:05.5596115Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:05.5597509Z ##[debug]which 'terraform'
+2021-02-19T20:11:05.5598600Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:05.5600410Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:05.5609789Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:05.5611265Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:05.5612698Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:05.5614329Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: version
+2021-02-19T20:11:05.5615348Z ##[debug]exec tool: /opt/hostedtoolcache/terraform/0.12.3/x64/terraform
+2021-02-19T20:11:05.5616420Z ##[debug]arguments:
+2021-02-19T20:11:05.5617875Z ##[debug]   version
+2021-02-19T20:11:05.5618940Z [command]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform version
+2021-02-19T20:11:05.5785957Z Terraform v0.12.3
+2021-02-19T20:11:05.5790047Z 
+2021-02-19T20:11:06.2979134Z Your version of Terraform is out of date! The latest version
+2021-02-19T20:11:06.2981317Z is 0.14.7. You can update by downloading from www.terraform.io/downloads.html
+2021-02-19T20:11:06.3015109Z ##[debug]Exit code 0 received from tool '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:06.3017071Z ##[debug]STDIO streams have closed for tool '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:06.3018303Z ##[debug]task result: Succeeded
+2021-02-19T20:11:06.3028226Z ##[debug]Processed: ##vso[task.complete result=Succeeded;]
+2021-02-19T20:11:06.3077826Z ##[section]Finishing: install
+2021-02-19T20:11:06.3103195Z ##[debug]Evaluating condition for step: 'init'
+2021-02-19T20:11:06.3105691Z ##[debug]Evaluating: SucceededNode()
+2021-02-19T20:11:06.3106974Z ##[debug]Evaluating SucceededNode:
+2021-02-19T20:11:06.3108740Z ##[debug]=> True
+2021-02-19T20:11:06.3109618Z ##[debug]Result: True
+2021-02-19T20:11:06.3110430Z ##[section]Starting: init
+2021-02-19T20:11:06.3321275Z ==============================================================================
+2021-02-19T20:11:06.3322174Z Task         : Terraform
+2021-02-19T20:11:06.3322733Z Description  : Execute terraform commands to manage resources on AzureRM, Amazon Web Services(AWS) and Google Cloud Platform(GCP)
+2021-02-19T20:11:06.3323245Z Version      : 0.0.142
+2021-02-19T20:11:06.3324456Z Author       : Microsoft Corporation
+2021-02-19T20:11:06.3325211Z Help         : [Learn more about this task](https://aka.ms/AA5j5pf)
+2021-02-19T20:11:06.3325722Z ==============================================================================
+2021-02-19T20:11:06.3435952Z ##[debug]Using node path: /home/vsts/agents/2.182.1/externals/node/bin/node
+2021-02-19T20:11:06.4527991Z ##[debug]agent.TempDirectory=/home/vsts/work/_temp
+2021-02-19T20:11:06.4552252Z ##[debug]loading inputs and endpoints
+2021-02-19T20:11:06.4556859Z ##[debug]loading INPUT_PROVIDER
+2021-02-19T20:11:06.4567279Z ##[debug]loading INPUT_COMMAND
+2021-02-19T20:11:06.4570645Z ##[debug]loading INPUT_WORKINGDIRECTORY
+2021-02-19T20:11:06.4573034Z ##[debug]loading INPUT_BACKENDSERVICEARM
+2021-02-19T20:11:06.4575101Z ##[debug]loading INPUT_BACKENDAZURERMRESOURCEGROUPNAME
+2021-02-19T20:11:06.4577577Z ##[debug]loading INPUT_BACKENDAZURERMSTORAGEACCOUNTNAME
+2021-02-19T20:11:06.4579237Z ##[debug]loading INPUT_BACKENDAZURERMCONTAINERNAME
+2021-02-19T20:11:06.4581331Z ##[debug]loading INPUT_BACKENDAZURERMKEY
+2021-02-19T20:11:06.4585108Z ##[debug]loading ENDPOINT_AUTH_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e
+2021-02-19T20:11:06.4586536Z ##[debug]loading ENDPOINT_AUTH_SCHEME_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e
+2021-02-19T20:11:06.4588559Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_TENANTID
+2021-02-19T20:11:06.4590292Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_SERVICEPRINCIPALID
+2021-02-19T20:11:06.4592001Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_AUTHENTICATIONTYPE
+2021-02-19T20:11:06.4595367Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_SCOPE
+2021-02-19T20:11:06.4597011Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_SERVICEPRINCIPALKEY
+2021-02-19T20:11:06.4598069Z ##[debug]loading ENDPOINT_AUTH_SYSTEMVSSCONNECTION
+2021-02-19T20:11:06.4600305Z ##[debug]loading ENDPOINT_AUTH_SCHEME_SYSTEMVSSCONNECTION
+2021-02-19T20:11:06.4602391Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_SYSTEMVSSCONNECTION_ACCESSTOKEN
+2021-02-19T20:11:06.4608190Z ##[debug]loading SECRET_SYSTEM_ACCESSTOKEN
+2021-02-19T20:11:06.4609330Z ##[debug]loaded 19
+2021-02-19T20:11:06.4625321Z ##[debug]Agent.ProxyUrl=undefined
+2021-02-19T20:11:06.4626443Z ##[debug]Agent.CAInfo=undefined
+2021-02-19T20:11:06.4627697Z ##[debug]Agent.ClientCert=undefined
+2021-02-19T20:11:06.4628664Z ##[debug]Agent.SkipCertValidation=undefined
+2021-02-19T20:11:06.4691976Z ##[debug]check path : /home/vsts/work/_tasks/TerraformTaskV1_fe504acc-6115-40cb-89ff-191386b5e7bf/0.0.142/task.json
+2021-02-19T20:11:06.4693365Z ##[debug]adding resource file: /home/vsts/work/_tasks/TerraformTaskV1_fe504acc-6115-40cb-89ff-191386b5e7bf/0.0.142/task.json
+2021-02-19T20:11:06.4694843Z ##[debug]system.culture=en-US
+2021-02-19T20:11:06.4715554Z ##[debug]provider=azurerm
+2021-02-19T20:11:06.4722867Z ##[debug]command=init
+2021-02-19T20:11:06.4732261Z ##[debug]workingDirectory=/home/vsts/work/1/s
+2021-02-19T20:11:06.4733102Z ##[debug]commandOptions=null
+2021-02-19T20:11:06.4736381Z ##[debug]which 'terraform'
+2021-02-19T20:11:06.4741761Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:06.4742960Z ##[debug]which 'terraform'
+2021-02-19T20:11:06.4743984Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:06.4745379Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:06.4746660Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:06.4747731Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:06.4749281Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:06.4754261Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: init
+2021-02-19T20:11:06.4758192Z ##[debug]backendServiceArm=c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e
+2021-02-19T20:11:06.4760619Z ##[debug]backendAzureRmStorageAccountName=tasacc
+2021-02-19T20:11:06.4762307Z ##[debug]backendAzureRmContainerName=tasc
+2021-02-19T20:11:06.4764146Z ##[debug]backendAzureRmKey=terraform.tfstate
+2021-02-19T20:11:06.4765833Z ##[debug]backendAzureRmResourceGroupName=targ
+2021-02-19T20:11:06.4768801Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e data subscriptionid = e692b449-ce48-439b-9f0b-dbf399f75c42
+2021-02-19T20:11:06.4773486Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e auth param tenantid = ***
+2021-02-19T20:11:06.4778708Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e auth param serviceprincipalid = ***
+2021-02-19T20:11:06.4779996Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e auth param serviceprincipalkey = ***
+2021-02-19T20:11:06.4781268Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: -backend-config=storage_account_name=tasacc
+2021-02-19T20:11:06.4785861Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: -backend-config=container_name=tasc
+2021-02-19T20:11:06.4786985Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: -backend-config=key=terraform.tfstate
+2021-02-19T20:11:06.4788054Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: -backend-config=resource_group_name=targ
+2021-02-19T20:11:06.4790359Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: -backend-config=arm_subscription_id=e692b449-ce48-439b-9f0b-dbf399f75c42
+2021-02-19T20:11:06.4791715Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: -backend-config=arm_tenant_id=***
+2021-02-19T20:11:06.4793163Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: -backend-config=arm_client_id=***
+2021-02-19T20:11:06.4794490Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: -backend-config=arm_client_secret=***
+2021-02-19T20:11:06.4795499Z ##[debug]exec tool: /opt/hostedtoolcache/terraform/0.12.3/x64/terraform
+2021-02-19T20:11:06.4797302Z ##[debug]arguments:
+2021-02-19T20:11:06.4798147Z ##[debug]   init
+2021-02-19T20:11:06.4799078Z ##[debug]   -backend-config=storage_account_name=tasacc
+2021-02-19T20:11:06.4800587Z ##[debug]   -backend-config=container_name=tasc
+2021-02-19T20:11:06.4801555Z ##[debug]   -backend-config=key=terraform.tfstate
+2021-02-19T20:11:06.4802512Z ##[debug]   -backend-config=resource_group_name=targ
+2021-02-19T20:11:06.4803686Z ##[debug]   -backend-config=arm_subscription_id=e692b449-ce48-439b-9f0b-dbf399f75c42
+2021-02-19T20:11:06.4804767Z ##[debug]   -backend-config=arm_tenant_id=***
+2021-02-19T20:11:06.4805784Z ##[debug]   -backend-config=arm_client_id=***
+2021-02-19T20:11:06.4807056Z ##[debug]   -backend-config=arm_client_secret=***
+2021-02-19T20:11:06.4808961Z [command]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform init -backend-config=storage_account_name=tasacc -backend-config=container_name=tasc -backend-config=key=terraform.tfstate -backend-config=resource_group_name=targ -backend-config=arm_subscription_id=e692b449-ce48-439b-9f0b-dbf399f75c42 -backend-config=arm_tenant_id=*** -backend-config=arm_client_id=*** -backend-config=arm_client_secret=***
+2021-02-19T20:11:06.5152064Z 
+2021-02-19T20:11:06.5158398Z [0m[1mInitializing the backend...[0m
+2021-02-19T20:11:06.5164557Z 
+2021-02-19T20:11:06.5165738Z [0m[1mInitializing provider plugins...[0m
+2021-02-19T20:11:06.5167195Z - Checking for available provider plugins...
+2021-02-19T20:11:06.7236176Z - Downloading plugin for provider "azurerm" (hashicorp/azurerm) 2.48.0...
+2021-02-19T20:11:08.1388494Z - Downloading plugin for provider "tls" (hashicorp/tls) 3.1.0...
+2021-02-19T20:11:08.4418727Z - Downloading plugin for provider "random" (hashicorp/random) 3.1.0...
+2021-02-19T20:11:09.2776942Z 
+2021-02-19T20:11:09.2778182Z The following providers do not have any version constraints in configuration,
+2021-02-19T20:11:09.2778864Z so the latest version was installed.
+2021-02-19T20:11:09.2779205Z 
+2021-02-19T20:11:09.2779734Z To prevent automatic upgrades to new major versions that may contain breaking
+2021-02-19T20:11:09.2780383Z changes, it is recommended to add version = "..." constraints to the
+2021-02-19T20:11:09.2781044Z corresponding provider blocks in configuration, with the constraint strings
+2021-02-19T20:11:09.2781614Z suggested below.
+2021-02-19T20:11:09.2781887Z 
+2021-02-19T20:11:09.2782351Z * provider.random: version = "~> 3.1"
+2021-02-19T20:11:09.2785264Z * provider.tls: version = "~> 3.1"
+2021-02-19T20:11:09.2785750Z 
+2021-02-19T20:11:09.2786941Z [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+2021-02-19T20:11:09.2787781Z [0m[32m
+2021-02-19T20:11:09.2790662Z You may now begin working with Terraform. Try running "terraform plan" to see
+2021-02-19T20:11:09.2791452Z any changes that are required for your infrastructure. All Terraform commands
+2021-02-19T20:11:09.2794823Z should now work.
+2021-02-19T20:11:09.2795934Z 
+2021-02-19T20:11:09.2797270Z If you ever set or change modules or backend configuration for Terraform,
+2021-02-19T20:11:09.2798030Z rerun this command to reinitialize your working directory. If you forget, other
+2021-02-19T20:11:09.2799146Z commands will detect it and remind you to do so if necessary.[0m
+2021-02-19T20:11:09.2833878Z ##[debug]Exit code 0 received from tool '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.2842043Z ##[debug]STDIO streams have closed for tool '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.2865893Z ##[debug]task result: Succeeded
+2021-02-19T20:11:09.2870597Z ##[debug]Processed: ##vso[task.complete result=Succeeded;]
+2021-02-19T20:11:09.2894360Z ##[section]Finishing: init
+2021-02-19T20:11:09.2917080Z ##[debug]Evaluating condition for step: 'plan'
+2021-02-19T20:11:09.2919428Z ##[debug]Evaluating: SucceededNode()
+2021-02-19T20:11:09.2920901Z ##[debug]Evaluating SucceededNode:
+2021-02-19T20:11:09.2922421Z ##[debug]=> True
+2021-02-19T20:11:09.2923286Z ##[debug]Result: True
+2021-02-19T20:11:09.2924101Z ##[section]Starting: plan
+2021-02-19T20:11:09.2934182Z ==============================================================================
+2021-02-19T20:11:09.2934753Z Task         : Terraform
+2021-02-19T20:11:09.2935201Z Description  : Execute terraform commands to manage resources on AzureRM, Amazon Web Services(AWS) and Google Cloud Platform(GCP)
+2021-02-19T20:11:09.2935685Z Version      : 0.0.142
+2021-02-19T20:11:09.2936041Z Author       : Microsoft Corporation
+2021-02-19T20:11:09.2936488Z Help         : [Learn more about this task](https://aka.ms/AA5j5pf)
+2021-02-19T20:11:09.2936965Z ==============================================================================
+2021-02-19T20:11:09.3008450Z ##[debug]Using node path: /home/vsts/agents/2.182.1/externals/node/bin/node
+2021-02-19T20:11:09.4183749Z ##[debug]agent.TempDirectory=/home/vsts/work/_temp
+2021-02-19T20:11:09.4213654Z ##[debug]loading inputs and endpoints
+2021-02-19T20:11:09.4217895Z ##[debug]loading INPUT_PROVIDER
+2021-02-19T20:11:09.4228344Z ##[debug]loading INPUT_COMMAND
+2021-02-19T20:11:09.4231170Z ##[debug]loading INPUT_WORKINGDIRECTORY
+2021-02-19T20:11:09.4234039Z ##[debug]loading INPUT_ENVIRONMENTSERVICENAMEAZURERM
+2021-02-19T20:11:09.4235621Z ##[debug]loading ENDPOINT_AUTH_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e
+2021-02-19T20:11:09.4245458Z ##[debug]loading ENDPOINT_AUTH_SCHEME_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e
+2021-02-19T20:11:09.4252402Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_TENANTID
+2021-02-19T20:11:09.4254744Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_SERVICEPRINCIPALID
+2021-02-19T20:11:09.4256012Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_AUTHENTICATIONTYPE
+2021-02-19T20:11:09.4259714Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_SCOPE
+2021-02-19T20:11:09.4261362Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_SERVICEPRINCIPALKEY
+2021-02-19T20:11:09.4263967Z ##[debug]loading ENDPOINT_AUTH_SYSTEMVSSCONNECTION
+2021-02-19T20:11:09.4264778Z ##[debug]loading ENDPOINT_AUTH_SCHEME_SYSTEMVSSCONNECTION
+2021-02-19T20:11:09.4266089Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_SYSTEMVSSCONNECTION_ACCESSTOKEN
+2021-02-19T20:11:09.4266915Z ##[debug]loading SECRET_SYSTEM_ACCESSTOKEN
+2021-02-19T20:11:09.4267602Z ##[debug]loaded 15
+2021-02-19T20:11:09.4274699Z ##[debug]Agent.ProxyUrl=undefined
+2021-02-19T20:11:09.4275541Z ##[debug]Agent.CAInfo=undefined
+2021-02-19T20:11:09.4276257Z ##[debug]Agent.ClientCert=undefined
+2021-02-19T20:11:09.4277362Z ##[debug]Agent.SkipCertValidation=undefined
+2021-02-19T20:11:09.4345905Z ##[debug]check path : /home/vsts/work/_tasks/TerraformTaskV1_fe504acc-6115-40cb-89ff-191386b5e7bf/0.0.142/task.json
+2021-02-19T20:11:09.4347399Z ##[debug]adding resource file: /home/vsts/work/_tasks/TerraformTaskV1_fe504acc-6115-40cb-89ff-191386b5e7bf/0.0.142/task.json
+2021-02-19T20:11:09.4348801Z ##[debug]system.culture=en-US
+2021-02-19T20:11:09.4369032Z ##[debug]provider=azurerm
+2021-02-19T20:11:09.4375012Z ##[debug]command=plan
+2021-02-19T20:11:09.4386953Z ##[debug]which 'terraform'
+2021-02-19T20:11:09.4393071Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.4395546Z ##[debug]which 'terraform'
+2021-02-19T20:11:09.4396995Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.4400661Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.4401814Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.4402890Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.4407026Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.4408140Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: providers
+2021-02-19T20:11:09.4415107Z ##[debug]workingDirectory=/home/vsts/work/1/s
+2021-02-19T20:11:09.4416270Z ##[debug]exec tool: /opt/hostedtoolcache/terraform/0.12.3/x64/terraform
+2021-02-19T20:11:09.4417373Z ##[debug]arguments:
+2021-02-19T20:11:09.4422568Z ##[debug]   providers
+2021-02-19T20:11:09.4423342Z [command]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform providers
+2021-02-19T20:11:09.4694667Z .
+2021-02-19T20:11:09.4696040Z â”œâ”€â”€ provider.azurerm ~>2.0
+2021-02-19T20:11:09.4697614Z â”œâ”€â”€ provider.random
+2021-02-19T20:11:09.4699041Z â””â”€â”€ provider.tls
+2021-02-19T20:11:09.4699666Z 
+2021-02-19T20:11:09.4700601Z ##[debug]3
+2021-02-19T20:11:09.4734234Z ##[warning]Multiple provider blocks specified in the .tf files in the current working drectory.
+2021-02-19T20:11:09.4742784Z ##[debug]Processed: ##vso[task.issue type=warning;]Multiple provider blocks specified in the .tf files in the current working drectory.
+2021-02-19T20:11:09.4743923Z ##[debug]provider=azurerm
+2021-02-19T20:11:09.4744697Z ##[debug]workingDirectory=/home/vsts/work/1/s
+2021-02-19T20:11:09.4745775Z ##[debug]environmentServiceNameAzureRM=c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e
+2021-02-19T20:11:09.4746613Z ##[debug]commandOptions=null
+2021-02-19T20:11:09.4747465Z ##[debug]which 'terraform'
+2021-02-19T20:11:09.4748419Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.4749357Z ##[debug]which 'terraform'
+2021-02-19T20:11:09.4750281Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.4751537Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.4752569Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.4754104Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.4755111Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:09.4755956Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: plan
+2021-02-19T20:11:09.4757488Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e data subscriptionid = e692b449-ce48-439b-9f0b-dbf399f75c42
+2021-02-19T20:11:09.4758658Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e auth param tenantid = ***
+2021-02-19T20:11:09.4760365Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e auth param serviceprincipalid = ***
+2021-02-19T20:11:09.4762327Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e auth param serviceprincipalkey = ***
+2021-02-19T20:11:09.4763474Z ##[debug]exec tool: /opt/hostedtoolcache/terraform/0.12.3/x64/terraform
+2021-02-19T20:11:09.4764607Z ##[debug]arguments:
+2021-02-19T20:11:09.4765646Z ##[debug]   plan
+2021-02-19T20:11:09.4766229Z [command]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform plan
+2021-02-19T20:11:11.2675086Z [0m[1mRefreshing Terraform state in-memory prior to plan...[0m
+2021-02-19T20:11:11.2678955Z The refreshed state will be used to calculate this plan, but will not be
+2021-02-19T20:11:11.2680081Z persisted to local or remote state storage.
+2021-02-19T20:11:11.2681893Z [0m
+2021-02-19T20:11:11.2684646Z 
+2021-02-19T20:11:11.2696458Z ------------------------------------------------------------------------
+2021-02-19T20:11:17.5524173Z 
+2021-02-19T20:11:17.5530713Z An execution plan has been generated and is shown below.
+2021-02-19T20:11:17.5611338Z Resource actions are indicated with the following symbols:
+2021-02-19T20:11:17.5613215Z   [32m+[0m create
+2021-02-19T20:11:17.5614529Z [0m
+2021-02-19T20:11:17.5618487Z Terraform will perform the following actions:
+2021-02-19T20:11:17.5619328Z 
+2021-02-19T20:11:17.5620816Z [1m  # azurerm_linux_virtual_machine.myterraformvm[0m will be created[0m[0m
+2021-02-19T20:11:17.5622164Z [0m[32m  +[0m [0mresource "azurerm_linux_virtual_machine" "myterraformvm" {
+2021-02-19T20:11:17.5625555Z       [32m+[0m [0m[1m[0madmin_username[0m[0m                  = "azureuser"
+2021-02-19T20:11:17.5627460Z       [32m+[0m [0m[1m[0mallow_extension_operations[0m[0m      = true
+2021-02-19T20:11:17.5628654Z       [32m+[0m [0m[1m[0mcomputer_name[0m[0m                   = "myvm"
+2021-02-19T20:11:17.5630702Z       [32m+[0m [0m[1m[0mdisable_password_authentication[0m[0m = true
+2021-02-19T20:11:17.5636000Z       [32m+[0m [0m[1m[0mextensions_time_budget[0m[0m          = "PT1H30M"
+2021-02-19T20:11:17.5646275Z       [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+2021-02-19T20:11:17.5686761Z       [32m+[0m [0m[1m[0mlocation[0m[0m                        = "eastus"
+2021-02-19T20:11:17.5692501Z       [32m+[0m [0m[1m[0mmax_bid_price[0m[0m                   = -1
+2021-02-19T20:11:17.5707966Z       [32m+[0m [0m[1m[0mname[0m[0m                            = "myVM"
+2021-02-19T20:11:17.5709013Z       [32m+[0m [0m[1m[0mnetwork_interface_ids[0m[0m           = (known after apply)
+2021-02-19T20:11:17.5713468Z       [32m+[0m [0m[1m[0mpriority[0m[0m                        = "Regular"
+2021-02-19T20:11:17.5716428Z       [32m+[0m [0m[1m[0mprivate_ip_address[0m[0m              = (known after apply)
+2021-02-19T20:11:17.5722030Z       [32m+[0m [0m[1m[0mprivate_ip_addresses[0m[0m            = (known after apply)
+2021-02-19T20:11:17.5728833Z       [32m+[0m [0m[1m[0mprovision_vm_agent[0m[0m              = true
+2021-02-19T20:11:17.5731917Z       [32m+[0m [0m[1m[0mpublic_ip_address[0m[0m               = (known after apply)
+2021-02-19T20:11:17.5736009Z       [32m+[0m [0m[1m[0mpublic_ip_addresses[0m[0m             = (known after apply)
+2021-02-19T20:11:17.5738864Z       [32m+[0m [0m[1m[0mresource_group_name[0m[0m             = "myResourceGroup"
+2021-02-19T20:11:17.5742804Z       [32m+[0m [0m[1m[0msize[0m[0m                            = "Standard_DS1_v2"
+2021-02-19T20:11:17.5747636Z       [32m+[0m [0m[1m[0mtags[0m[0m                            = {
+2021-02-19T20:11:17.5751222Z           [32m+[0m [0m"environment" = "Terraform Demo"
+2021-02-19T20:11:17.5754444Z         }
+2021-02-19T20:11:17.5757594Z       [32m+[0m [0m[1m[0mvirtual_machine_id[0m[0m              = (known after apply)
+2021-02-19T20:11:17.5763957Z       [32m+[0m [0m[1m[0mzone[0m[0m                            = (known after apply)
+2021-02-19T20:11:17.5768000Z 
+2021-02-19T20:11:17.5768853Z       [32m+[0m [0madmin_ssh_key {
+2021-02-19T20:11:17.5770133Z           [32m+[0m [0m[1m[0mpublic_key[0m[0m = (known after apply)
+2021-02-19T20:11:17.5771459Z           [32m+[0m [0m[1m[0musername[0m[0m   = "azureuser"
+2021-02-19T20:11:17.5772119Z         }
+2021-02-19T20:11:17.5772880Z 
+2021-02-19T20:11:17.5791602Z       [32m+[0m [0mboot_diagnostics {
+2021-02-19T20:11:17.5824585Z           [32m+[0m [0m[1m[0mstorage_account_uri[0m[0m = (known after apply)
+2021-02-19T20:11:17.5825683Z         }
+2021-02-19T20:11:17.5826810Z 
+2021-02-19T20:11:17.5833227Z       [32m+[0m [0mos_disk {
+2021-02-19T20:11:17.5834548Z           [32m+[0m [0m[1m[0mcaching[0m[0m                   = "ReadWrite"
+2021-02-19T20:11:17.5835969Z           [32m+[0m [0m[1m[0mdisk_size_gb[0m[0m              = (known after apply)
+2021-02-19T20:11:17.5837048Z           [32m+[0m [0m[1m[0mname[0m[0m                      = "myOsDisk"
+2021-02-19T20:11:17.5838083Z           [32m+[0m [0m[1m[0mstorage_account_type[0m[0m      = "Premium_LRS"
+2021-02-19T20:11:17.5838879Z           [32m+[0m [0m[1m[0mwrite_accelerator_enabled[0m[0m = false
+2021-02-19T20:11:17.5839359Z         }
+2021-02-19T20:11:17.5839556Z 
+2021-02-19T20:11:17.5840116Z       [32m+[0m [0msource_image_reference {
+2021-02-19T20:11:17.5840843Z           [32m+[0m [0m[1m[0moffer[0m[0m     = "UbuntuServer"
+2021-02-19T20:11:17.5841575Z           [32m+[0m [0m[1m[0mpublisher[0m[0m = "Canonical"
+2021-02-19T20:11:17.5842657Z           [32m+[0m [0m[1m[0msku[0m[0m       = "18.04-LTS"
+2021-02-19T20:11:17.5843693Z           [32m+[0m [0m[1m[0mversion[0m[0m   = "latest"
+2021-02-19T20:11:17.5844587Z         }
+2021-02-19T20:11:17.5845157Z     }
+2021-02-19T20:11:17.5845531Z 
+2021-02-19T20:11:17.5846594Z [1m  # azurerm_network_interface.myterraformnic[0m will be created[0m[0m
+2021-02-19T20:11:17.5847741Z [0m[32m  +[0m [0mresource "azurerm_network_interface" "myterraformnic" {
+2021-02-19T20:11:17.5848536Z       [32m+[0m [0m[1m[0mapplied_dns_servers[0m[0m           = (known after apply)
+2021-02-19T20:11:17.5849332Z       [32m+[0m [0m[1m[0mdns_servers[0m[0m                   = (known after apply)
+2021-02-19T20:11:17.5850348Z       [32m+[0m [0m[1m[0menable_accelerated_networking[0m[0m = false
+2021-02-19T20:11:17.5851123Z       [32m+[0m [0m[1m[0menable_ip_forwarding[0m[0m          = false
+2021-02-19T20:11:17.5851930Z       [32m+[0m [0m[1m[0mid[0m[0m                            = (known after apply)
+2021-02-19T20:11:17.5852731Z       [32m+[0m [0m[1m[0minternal_dns_name_label[0m[0m       = (known after apply)
+2021-02-19T20:11:17.5853721Z       [32m+[0m [0m[1m[0minternal_domain_name_suffix[0m[0m   = (known after apply)
+2021-02-19T20:11:17.5854528Z       [32m+[0m [0m[1m[0mlocation[0m[0m                      = "eastus"
+2021-02-19T20:11:17.5855352Z       [32m+[0m [0m[1m[0mmac_address[0m[0m                   = (known after apply)
+2021-02-19T20:11:17.5856299Z       [32m+[0m [0m[1m[0mname[0m[0m                          = "myNIC"
+2021-02-19T20:11:17.5857085Z       [32m+[0m [0m[1m[0mprivate_ip_address[0m[0m            = (known after apply)
+2021-02-19T20:11:17.5857885Z       [32m+[0m [0m[1m[0mprivate_ip_addresses[0m[0m          = (known after apply)
+2021-02-19T20:11:17.5858703Z       [32m+[0m [0m[1m[0mresource_group_name[0m[0m           = "myResourceGroup"
+2021-02-19T20:11:17.5859463Z       [32m+[0m [0m[1m[0mtags[0m[0m                          = {
+2021-02-19T20:11:17.5860370Z           [32m+[0m [0m"environment" = "Terraform Demo"
+2021-02-19T20:11:17.5861016Z         }
+2021-02-19T20:11:17.5861721Z       [32m+[0m [0m[1m[0mvirtual_machine_id[0m[0m            = (known after apply)
+2021-02-19T20:11:17.5862092Z 
+2021-02-19T20:11:17.5863069Z       [32m+[0m [0mip_configuration {
+2021-02-19T20:11:17.5863856Z           [32m+[0m [0m[1m[0mname[0m[0m                          = "myNicConfiguration"
+2021-02-19T20:11:17.5864739Z           [32m+[0m [0m[1m[0mprimary[0m[0m                       = (known after apply)
+2021-02-19T20:11:17.5865604Z           [32m+[0m [0m[1m[0mprivate_ip_address[0m[0m            = (known after apply)
+2021-02-19T20:11:17.5866593Z           [32m+[0m [0m[1m[0mprivate_ip_address_allocation[0m[0m = "dynamic"
+2021-02-19T20:11:17.5867390Z           [32m+[0m [0m[1m[0mprivate_ip_address_version[0m[0m    = "IPv4"
+2021-02-19T20:11:17.5868223Z           [32m+[0m [0m[1m[0mpublic_ip_address_id[0m[0m          = (known after apply)
+2021-02-19T20:11:17.5869223Z           [32m+[0m [0m[1m[0msubnet_id[0m[0m                     = (known after apply)
+2021-02-19T20:11:17.5869905Z         }
+2021-02-19T20:11:17.5870590Z     }
+2021-02-19T20:11:17.5870920Z 
+2021-02-19T20:11:17.5871621Z [1m  # azurerm_network_interface_security_group_association.example[0m will be created[0m[0m
+2021-02-19T20:11:17.5872483Z [0m[32m  +[0m [0mresource "azurerm_network_interface_security_group_association" "example" {
+2021-02-19T20:11:17.5873313Z       [32m+[0m [0m[1m[0mid[0m[0m                        = (known after apply)
+2021-02-19T20:11:17.5874140Z       [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m      = (known after apply)
+2021-02-19T20:11:17.5875432Z       [32m+[0m [0m[1m[0mnetwork_security_group_id[0m[0m = (known after apply)
+2021-02-19T20:11:17.5875914Z     }
+2021-02-19T20:11:17.5876117Z 
+2021-02-19T20:11:17.5876971Z [1m  # azurerm_network_security_group.myterraformnsg[0m will be created[0m[0m
+2021-02-19T20:11:17.5877764Z [0m[32m  +[0m [0mresource "azurerm_network_security_group" "myterraformnsg" {
+2021-02-19T20:11:17.5878810Z       [32m+[0m [0m[1m[0mid[0m[0m                  = (known after apply)
+2021-02-19T20:11:17.5879773Z       [32m+[0m [0m[1m[0mlocation[0m[0m            = "eastus"
+2021-02-19T20:11:17.5880547Z       [32m+[0m [0m[1m[0mname[0m[0m                = "myNetworkSecurityGroup"
+2021-02-19T20:11:17.5881485Z       [32m+[0m [0m[1m[0mresource_group_name[0m[0m = "myResourceGroup"
+2021-02-19T20:11:17.5882217Z       [32m+[0m [0m[1m[0msecurity_rule[0m[0m       = [
+2021-02-19T20:11:17.5883100Z           [32m+[0m [0m{
+2021-02-19T20:11:17.5884214Z               [32m+[0m [0maccess                                     = "Allow"
+2021-02-19T20:11:17.5885039Z               [32m+[0m [0mdescription                                = ""
+2021-02-19T20:11:17.5886157Z               [32m+[0m [0mdestination_address_prefix                 = "*"
+2021-02-19T20:11:17.5886937Z               [32m+[0m [0mdestination_address_prefixes               = []
+2021-02-19T20:11:17.5887867Z               [32m+[0m [0mdestination_application_security_group_ids = []
+2021-02-19T20:11:17.5888837Z               [32m+[0m [0mdestination_port_range                     = "22"
+2021-02-19T20:11:17.5890212Z               [32m+[0m [0mdestination_port_ranges                    = []
+2021-02-19T20:11:17.5891049Z               [32m+[0m [0mdirection                                  = "Inbound"
+2021-02-19T20:11:17.5891985Z               [32m+[0m [0mname                                       = "SSH"
+2021-02-19T20:11:17.5893009Z               [32m+[0m [0mpriority                                   = 1001
+2021-02-19T20:11:17.5893943Z               [32m+[0m [0mprotocol                                   = "Tcp"
+2021-02-19T20:11:17.5894705Z               [32m+[0m [0msource_address_prefix                      = "*"
+2021-02-19T20:11:17.5895466Z               [32m+[0m [0msource_address_prefixes                    = []
+2021-02-19T20:11:17.5896481Z               [32m+[0m [0msource_application_security_group_ids      = []
+2021-02-19T20:11:17.5897406Z               [32m+[0m [0msource_port_range                          = "*"
+2021-02-19T20:11:17.5898543Z               [32m+[0m [0msource_port_ranges                         = []
+2021-02-19T20:11:17.5899295Z             },
+2021-02-19T20:11:17.5899678Z         ]
+2021-02-19T20:11:17.5900750Z       [32m+[0m [0m[1m[0mtags[0m[0m                = {
+2021-02-19T20:11:17.5901507Z           [32m+[0m [0m"environment" = "Terraform Demo"
+2021-02-19T20:11:17.5902133Z         }
+2021-02-19T20:11:17.5902838Z     }
+2021-02-19T20:11:17.5903136Z 
+2021-02-19T20:11:17.5904047Z [1m  # azurerm_public_ip.myterraformpublicip[0m will be created[0m[0m
+2021-02-19T20:11:17.5905044Z [0m[32m  +[0m [0mresource "azurerm_public_ip" "myterraformpublicip" {
+2021-02-19T20:11:17.5906028Z       [32m+[0m [0m[1m[0mallocation_method[0m[0m       = "Dynamic"
+2021-02-19T20:11:17.5907539Z       [32m+[0m [0m[1m[0mfqdn[0m[0m                    = (known after apply)
+2021-02-19T20:11:17.5908584Z       [32m+[0m [0m[1m[0mid[0m[0m                      = (known after apply)
+2021-02-19T20:11:17.5909717Z       [32m+[0m [0m[1m[0midle_timeout_in_minutes[0m[0m = 4
+2021-02-19T20:11:17.5910497Z       [32m+[0m [0m[1m[0mip_address[0m[0m              = (known after apply)
+2021-02-19T20:11:17.5911255Z       [32m+[0m [0m[1m[0mip_version[0m[0m              = "IPv4"
+2021-02-19T20:11:17.5911995Z       [32m+[0m [0m[1m[0mlocation[0m[0m                = "eastus"
+2021-02-19T20:11:17.5912980Z       [32m+[0m [0m[1m[0mname[0m[0m                    = "myPublicIP"
+2021-02-19T20:11:17.5922344Z       [32m+[0m [0m[1m[0mresource_group_name[0m[0m     = "myResourceGroup"
+2021-02-19T20:11:17.5923289Z       [32m+[0m [0m[1m[0msku[0m[0m                     = "Basic"
+2021-02-19T20:11:17.5924131Z       [32m+[0m [0m[1m[0mtags[0m[0m                    = {
+2021-02-19T20:11:17.5925557Z           [32m+[0m [0m"environment" = "Terraform Demo"
+2021-02-19T20:11:17.5926292Z         }
+2021-02-19T20:11:17.5926647Z     }
+2021-02-19T20:11:17.5926800Z 
+2021-02-19T20:11:17.5927440Z [1m  # azurerm_resource_group.myterraformgroup[0m will be created[0m[0m
+2021-02-19T20:11:17.5928386Z [0m[32m  +[0m [0mresource "azurerm_resource_group" "myterraformgroup" {
+2021-02-19T20:11:17.6035654Z       [32m+[0m [0m[1m[0mid[0m[0m       = (known after apply)
+2021-02-19T20:11:17.6036672Z       [32m+[0m [0m[1m[0mlocation[0m[0m = "eastus"
+2021-02-19T20:11:17.6037464Z       [32m+[0m [0m[1m[0mname[0m[0m     = "myResourceGroup"
+2021-02-19T20:11:17.6038182Z       [32m+[0m [0m[1m[0mtags[0m[0m     = {
+2021-02-19T20:11:17.6038896Z           [32m+[0m [0m"environment" = "Terraform Demo"
+2021-02-19T20:11:17.6039351Z         }
+2021-02-19T20:11:17.6039693Z     }
+2021-02-19T20:11:17.6039899Z 
+2021-02-19T20:11:17.6040524Z [1m  # azurerm_storage_account.mystorageaccount[0m will be created[0m[0m
+2021-02-19T20:11:17.6041301Z [0m[32m  +[0m [0mresource "azurerm_storage_account" "mystorageaccount" {
+2021-02-19T20:11:17.6042106Z       [32m+[0m [0m[1m[0maccess_tier[0m[0m                      = (known after apply)
+2021-02-19T20:11:17.6043114Z       [32m+[0m [0m[1m[0maccount_kind[0m[0m                     = "StorageV2"
+2021-02-19T20:11:17.6044087Z       [32m+[0m [0m[1m[0maccount_replication_type[0m[0m         = "LRS"
+2021-02-19T20:11:17.6044863Z       [32m+[0m [0m[1m[0maccount_tier[0m[0m                     = "Standard"
+2021-02-19T20:11:17.6045640Z       [32m+[0m [0m[1m[0mallow_blob_public_access[0m[0m         = false
+2021-02-19T20:11:17.6046401Z       [32m+[0m [0m[1m[0menable_https_traffic_only[0m[0m        = true
+2021-02-19T20:11:17.6047218Z       [32m+[0m [0m[1m[0mid[0m[0m                               = (known after apply)
+2021-02-19T20:11:17.6048002Z       [32m+[0m [0m[1m[0mis_hns_enabled[0m[0m                   = false
+2021-02-19T20:11:17.6048807Z       [32m+[0m [0m[1m[0mlarge_file_share_enabled[0m[0m         = (known after apply)
+2021-02-19T20:11:17.6049870Z       [32m+[0m [0m[1m[0mlocation[0m[0m                         = "eastus"
+2021-02-19T20:11:17.6050746Z       [32m+[0m [0m[1m[0mmin_tls_version[0m[0m                  = "TLS1_0"
+2021-02-19T20:11:17.6051555Z       [32m+[0m [0m[1m[0mname[0m[0m                             = (known after apply)
+2021-02-19T20:11:17.6052541Z       [32m+[0m [0m[1m[0mprimary_access_key[0m[0m               = (sensitive value)
+2021-02-19T20:11:17.6053365Z       [32m+[0m [0m[1m[0mprimary_blob_connection_string[0m[0m   = (sensitive value)
+2021-02-19T20:11:17.6054221Z       [32m+[0m [0m[1m[0mprimary_blob_endpoint[0m[0m            = (known after apply)
+2021-02-19T20:11:17.6055202Z       [32m+[0m [0m[1m[0mprimary_blob_host[0m[0m                = (known after apply)
+2021-02-19T20:11:17.6056010Z       [32m+[0m [0m[1m[0mprimary_connection_string[0m[0m        = (sensitive value)
+2021-02-19T20:11:17.6056821Z       [32m+[0m [0m[1m[0mprimary_dfs_endpoint[0m[0m             = (known after apply)
+2021-02-19T20:11:17.6057645Z       [32m+[0m [0m[1m[0mprimary_dfs_host[0m[0m                 = (known after apply)
+2021-02-19T20:11:17.6058801Z       [32m+[0m [0m[1m[0mprimary_file_endpoint[0m[0m            = (known after apply)
+2021-02-19T20:11:17.6059598Z       [32m+[0m [0m[1m[0mprimary_file_host[0m[0m                = (known after apply)
+2021-02-19T20:11:17.6060385Z       [32m+[0m [0m[1m[0mprimary_location[0m[0m                 = (known after apply)
+2021-02-19T20:11:17.6061359Z       [32m+[0m [0m[1m[0mprimary_queue_endpoint[0m[0m           = (known after apply)
+2021-02-19T20:11:17.6062200Z       [32m+[0m [0m[1m[0mprimary_queue_host[0m[0m               = (known after apply)
+2021-02-19T20:11:17.6063199Z       [32m+[0m [0m[1m[0mprimary_table_endpoint[0m[0m           = (known after apply)
+2021-02-19T20:11:17.6064024Z       [32m+[0m [0m[1m[0mprimary_table_host[0m[0m               = (known after apply)
+2021-02-19T20:11:17.6064943Z       [32m+[0m [0m[1m[0mprimary_web_endpoint[0m[0m             = (known after apply)
+2021-02-19T20:11:17.6066158Z       [32m+[0m [0m[1m[0mprimary_web_host[0m[0m                 = (known after apply)
+2021-02-19T20:11:17.6066948Z       [32m+[0m [0m[1m[0mresource_group_name[0m[0m              = "myResourceGroup"
+2021-02-19T20:11:17.6067728Z       [32m+[0m [0m[1m[0msecondary_access_key[0m[0m             = (sensitive value)
+2021-02-19T20:11:17.6068509Z       [32m+[0m [0m[1m[0msecondary_blob_connection_string[0m[0m = (sensitive value)
+2021-02-19T20:11:17.6070231Z       [32m+[0m [0m[1m[0msecondary_blob_endpoint[0m[0m          = (known after apply)
+2021-02-19T20:11:17.6072050Z       [32m+[0m [0m[1m[0msecondary_blob_host[0m[0m              = (known after apply)
+2021-02-19T20:11:17.6073108Z       [32m+[0m [0m[1m[0msecondary_connection_string[0m[0m      = (sensitive value)
+2021-02-19T20:11:17.6074149Z       [32m+[0m [0m[1m[0msecondary_dfs_endpoint[0m[0m           = (known after apply)
+2021-02-19T20:11:17.6075359Z       [32m+[0m [0m[1m[0msecondary_dfs_host[0m[0m               = (known after apply)
+2021-02-19T20:11:17.6077434Z       [32m+[0m [0m[1m[0msecondary_file_endpoint[0m[0m          = (known after apply)
+2021-02-19T20:11:17.6078441Z       [32m+[0m [0m[1m[0msecondary_file_host[0m[0m              = (known after apply)
+2021-02-19T20:11:17.6079255Z       [32m+[0m [0m[1m[0msecondary_location[0m[0m               = (known after apply)
+2021-02-19T20:11:17.6080298Z       [32m+[0m [0m[1m[0msecondary_queue_endpoint[0m[0m         = (known after apply)
+2021-02-19T20:11:17.6081663Z       [32m+[0m [0m[1m[0msecondary_queue_host[0m[0m             = (known after apply)
+2021-02-19T20:11:17.6082884Z       [32m+[0m [0m[1m[0msecondary_table_endpoint[0m[0m         = (known after apply)
+2021-02-19T20:11:17.6084097Z       [32m+[0m [0m[1m[0msecondary_table_host[0m[0m             = (known after apply)
+2021-02-19T20:11:17.6085498Z       [32m+[0m [0m[1m[0msecondary_web_endpoint[0m[0m           = (known after apply)
+2021-02-19T20:11:17.6086475Z       [32m+[0m [0m[1m[0msecondary_web_host[0m[0m               = (known after apply)
+2021-02-19T20:11:17.6087246Z       [32m+[0m [0m[1m[0mtags[0m[0m                             = {
+2021-02-19T20:11:17.6088129Z           [32m+[0m [0m"environment" = "Terraform Demo"
+2021-02-19T20:11:17.6088585Z         }
+2021-02-19T20:11:17.6088777Z 
+2021-02-19T20:11:17.6089305Z       [32m+[0m [0mblob_properties {
+2021-02-19T20:11:17.6090329Z           [32m+[0m [0mcors_rule {
+2021-02-19T20:11:17.6091280Z               [32m+[0m [0m[1m[0mallowed_headers[0m[0m    = (known after apply)
+2021-02-19T20:11:17.6092286Z               [32m+[0m [0m[1m[0mallowed_methods[0m[0m    = (known after apply)
+2021-02-19T20:11:17.6093459Z               [32m+[0m [0m[1m[0mallowed_origins[0m[0m    = (known after apply)
+2021-02-19T20:11:17.6094307Z               [32m+[0m [0m[1m[0mexposed_headers[0m[0m    = (known after apply)
+2021-02-19T20:11:17.6095158Z               [32m+[0m [0m[1m[0mmax_age_in_seconds[0m[0m = (known after apply)
+2021-02-19T20:11:17.6096162Z             }
+2021-02-19T20:11:17.6096376Z 
+2021-02-19T20:11:17.6097262Z           [32m+[0m [0mdelete_retention_policy {
+2021-02-19T20:11:17.6097958Z               [32m+[0m [0m[1m[0mdays[0m[0m = (known after apply)
+2021-02-19T20:11:17.6098428Z             }
+2021-02-19T20:11:17.6098779Z         }
+2021-02-19T20:11:17.6099158Z 
+2021-02-19T20:11:17.6099852Z       [32m+[0m [0midentity {
+2021-02-19T20:11:17.6100551Z           [32m+[0m [0m[1m[0mprincipal_id[0m[0m = (known after apply)
+2021-02-19T20:11:17.6101304Z           [32m+[0m [0m[1m[0mtenant_id[0m[0m    = (known after apply)
+2021-02-19T20:11:17.6102058Z           [32m+[0m [0m[1m[0mtype[0m[0m         = (known after apply)
+2021-02-19T20:11:17.6102722Z         }
+2021-02-19T20:11:17.6103073Z 
+2021-02-19T20:11:17.6103874Z       [32m+[0m [0mnetwork_rules {
+2021-02-19T20:11:17.6104669Z           [32m+[0m [0m[1m[0mbypass[0m[0m                     = (known after apply)
+2021-02-19T20:11:17.6105528Z           [32m+[0m [0m[1m[0mdefault_action[0m[0m             = (known after apply)
+2021-02-19T20:11:17.6106358Z           [32m+[0m [0m[1m[0mip_rules[0m[0m                   = (known after apply)
+2021-02-19T20:11:17.6107573Z           [32m+[0m [0m[1m[0mvirtual_network_subnet_ids[0m[0m = (known after apply)
+2021-02-19T20:11:17.6108077Z         }
+2021-02-19T20:11:17.6108290Z 
+2021-02-19T20:11:17.6108842Z       [32m+[0m [0mqueue_properties {
+2021-02-19T20:11:17.6109490Z           [32m+[0m [0mcors_rule {
+2021-02-19T20:11:17.6110231Z               [32m+[0m [0m[1m[0mallowed_headers[0m[0m    = (known after apply)
+2021-02-19T20:11:17.6111202Z               [32m+[0m [0m[1m[0mallowed_methods[0m[0m    = (known after apply)
+2021-02-19T20:11:17.6111995Z               [32m+[0m [0m[1m[0mallowed_origins[0m[0m    = (known after apply)
+2021-02-19T20:11:17.6112785Z               [32m+[0m [0m[1m[0mexposed_headers[0m[0m    = (known after apply)
+2021-02-19T20:11:17.6113583Z               [32m+[0m [0m[1m[0mmax_age_in_seconds[0m[0m = (known after apply)
+2021-02-19T20:11:17.6114095Z             }
+2021-02-19T20:11:17.6114290Z 
+2021-02-19T20:11:17.6114826Z           [32m+[0m [0mhour_metrics {
+2021-02-19T20:11:17.6115727Z               [32m+[0m [0m[1m[0menabled[0m[0m               = (known after apply)
+2021-02-19T20:11:17.6116530Z               [32m+[0m [0m[1m[0minclude_apis[0m[0m          = (known after apply)
+2021-02-19T20:11:17.6117308Z               [32m+[0m [0m[1m[0mretention_policy_days[0m[0m = (known after apply)
+2021-02-19T20:11:17.6118085Z               [32m+[0m [0m[1m[0mversion[0m[0m               = (known after apply)
+2021-02-19T20:11:17.6118751Z             }
+2021-02-19T20:11:17.6118966Z 
+2021-02-19T20:11:17.6119487Z           [32m+[0m [0mlogging {
+2021-02-19T20:11:17.6120402Z               [32m+[0m [0m[1m[0mdelete[0m[0m                = (known after apply)
+2021-02-19T20:11:17.6121240Z               [32m+[0m [0m[1m[0mread[0m[0m                  = (known after apply)
+2021-02-19T20:11:17.6122206Z               [32m+[0m [0m[1m[0mretention_policy_days[0m[0m = (known after apply)
+2021-02-19T20:11:17.6123349Z               [32m+[0m [0m[1m[0mversion[0m[0m               = (known after apply)
+2021-02-19T20:11:17.6124144Z               [32m+[0m [0m[1m[0mwrite[0m[0m                 = (known after apply)
+2021-02-19T20:11:17.6124636Z             }
+2021-02-19T20:11:17.6124853Z 
+2021-02-19T20:11:17.6125394Z           [32m+[0m [0mminute_metrics {
+2021-02-19T20:11:17.6126424Z               [32m+[0m [0m[1m[0menabled[0m[0m               = (known after apply)
+2021-02-19T20:11:17.6127237Z               [32m+[0m [0m[1m[0minclude_apis[0m[0m          = (known after apply)
+2021-02-19T20:11:17.6128022Z               [32m+[0m [0m[1m[0mretention_policy_days[0m[0m = (known after apply)
+2021-02-19T20:11:17.6128802Z               [32m+[0m [0m[1m[0mversion[0m[0m               = (known after apply)
+2021-02-19T20:11:17.6130049Z             }
+2021-02-19T20:11:17.6130471Z         }
+2021-02-19T20:11:17.6130833Z     }
+2021-02-19T20:11:17.6131019Z 
+2021-02-19T20:11:17.6131682Z [1m  # azurerm_subnet.myterraformsubnet[0m will be created[0m[0m
+2021-02-19T20:11:17.6132810Z [0m[32m  +[0m [0mresource "azurerm_subnet" "myterraformsubnet" {
+2021-02-19T20:11:17.6133729Z       [32m+[0m [0m[1m[0maddress_prefix[0m[0m                                 = (known after apply)
+2021-02-19T20:11:17.6134774Z       [32m+[0m [0m[1m[0maddress_prefixes[0m[0m                               = [
+2021-02-19T20:11:17.6135533Z           [32m+[0m [0m"10.0.1.0/24",
+2021-02-19T20:11:17.6136286Z         ]
+2021-02-19T20:11:17.6136920Z       [32m+[0m [0m[1m[0menforce_private_link_endpoint_network_policies[0m[0m = false
+2021-02-19T20:11:17.6137799Z       [32m+[0m [0m[1m[0menforce_private_link_service_network_policies[0m[0m  = false
+2021-02-19T20:11:17.6138663Z       [32m+[0m [0m[1m[0mid[0m[0m                                             = (known after apply)
+2021-02-19T20:11:17.6139469Z       [32m+[0m [0m[1m[0mname[0m[0m                                           = "mySubnet"
+2021-02-19T20:11:17.6140271Z       [32m+[0m [0m[1m[0mresource_group_name[0m[0m                            = "myResourceGroup"
+2021-02-19T20:11:17.6141280Z       [32m+[0m [0m[1m[0mvirtual_network_name[0m[0m                           = "myVnet"
+2021-02-19T20:11:17.6141776Z     }
+2021-02-19T20:11:17.6141986Z 
+2021-02-19T20:11:17.6142962Z [1m  # azurerm_virtual_network.myterraformnetwork[0m will be created[0m[0m
+2021-02-19T20:11:17.6144322Z [0m[32m  +[0m [0mresource "azurerm_virtual_network" "myterraformnetwork" {
+2021-02-19T20:11:17.6145375Z       [32m+[0m [0m[1m[0maddress_space[0m[0m         = [
+2021-02-19T20:11:17.6146289Z           [32m+[0m [0m"10.0.0.0/16",
+2021-02-19T20:11:17.6146743Z         ]
+2021-02-19T20:11:17.6147444Z       [32m+[0m [0m[1m[0mguid[0m[0m                  = (known after apply)
+2021-02-19T20:11:17.6148903Z       [32m+[0m [0m[1m[0mid[0m[0m                    = (known after apply)
+2021-02-19T20:11:17.6149657Z       [32m+[0m [0m[1m[0mlocation[0m[0m              = "eastus"
+2021-02-19T20:11:17.6150375Z       [32m+[0m [0m[1m[0mname[0m[0m                  = "myVnet"
+2021-02-19T20:11:17.6151113Z       [32m+[0m [0m[1m[0mresource_group_name[0m[0m   = "myResourceGroup"
+2021-02-19T20:11:17.6152045Z       [32m+[0m [0m[1m[0msubnet[0m[0m                = (known after apply)
+2021-02-19T20:11:17.6152802Z       [32m+[0m [0m[1m[0mtags[0m[0m                  = {
+2021-02-19T20:11:17.6153504Z           [32m+[0m [0m"environment" = "Terraform Demo"
+2021-02-19T20:11:17.6153953Z         }
+2021-02-19T20:11:17.6154573Z       [32m+[0m [0m[1m[0mvm_protection_enabled[0m[0m = false
+2021-02-19T20:11:17.6155193Z     }
+2021-02-19T20:11:17.6155395Z 
+2021-02-19T20:11:17.6155950Z [1m  # random_id.randomId[0m will be created[0m[0m
+2021-02-19T20:11:17.6156626Z [0m[32m  +[0m [0mresource "random_id" "randomId" {
+2021-02-19T20:11:17.6157333Z       [32m+[0m [0m[1m[0mb64_std[0m[0m     = (known after apply)
+2021-02-19T20:11:17.6158068Z       [32m+[0m [0m[1m[0mb64_url[0m[0m     = (known after apply)
+2021-02-19T20:11:17.6158759Z       [32m+[0m [0m[1m[0mbyte_length[0m[0m = 8
+2021-02-19T20:11:17.6159462Z       [32m+[0m [0m[1m[0mdec[0m[0m         = (known after apply)
+2021-02-19T20:11:17.6160182Z       [32m+[0m [0m[1m[0mhex[0m[0m         = (known after apply)
+2021-02-19T20:11:17.6161050Z       [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+2021-02-19T20:11:17.6161772Z       [32m+[0m [0m[1m[0mkeepers[0m[0m     = {
+2021-02-19T20:11:17.6162839Z           [32m+[0m [0m"resource_group" = "myResourceGroup"
+2021-02-19T20:11:17.6163314Z         }
+2021-02-19T20:11:17.6163660Z     }
+2021-02-19T20:11:17.6163867Z 
+2021-02-19T20:11:17.6164470Z [1m  # tls_private_key.example_ssh[0m will be created[0m[0m
+2021-02-19T20:11:17.6165340Z [0m[32m  +[0m [0mresource "tls_private_key" "example_ssh" {
+2021-02-19T20:11:17.6166373Z       [32m+[0m [0m[1m[0malgorithm[0m[0m                  = "RSA"
+2021-02-19T20:11:17.6167123Z       [32m+[0m [0m[1m[0mecdsa_curve[0m[0m                = "P224"
+2021-02-19T20:11:17.6167874Z       [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+2021-02-19T20:11:17.6168650Z       [32m+[0m [0m[1m[0mprivate_key_pem[0m[0m            = (sensitive value)
+2021-02-19T20:11:17.6169609Z       [32m+[0m [0m[1m[0mpublic_key_fingerprint_md5[0m[0m = (known after apply)
+2021-02-19T20:11:17.6170477Z       [32m+[0m [0m[1m[0mpublic_key_openssh[0m[0m         = (known after apply)
+2021-02-19T20:11:17.6171354Z       [32m+[0m [0m[1m[0mpublic_key_pem[0m[0m             = (known after apply)
+2021-02-19T20:11:17.6172146Z       [32m+[0m [0m[1m[0mrsa_bits[0m[0m                   = 4096
+2021-02-19T20:11:17.6172604Z     }
+2021-02-19T20:11:17.6172808Z 
+2021-02-19T20:11:17.6173557Z [0m[1mPlan:[0m 11 to add, 0 to change, 0 to destroy.[0m
+2021-02-19T20:11:17.6174159Z [33m
+2021-02-19T20:11:17.6175009Z [1m[33mWarning: [0m[0m[1m"skip_credentials_validation": [DEPRECATED] This field is deprecated and will be removed in version 3.0 of the Azure Provider[0m
+2021-02-19T20:11:17.6175488Z 
+2021-02-19T20:11:17.6175978Z [0m[0m[0m
+2021-02-19T20:11:17.6176221Z 
+2021-02-19T20:11:17.6176994Z ------------------------------------------------------------------------
+2021-02-19T20:11:17.6177284Z 
+2021-02-19T20:11:17.6177900Z Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+2021-02-19T20:11:17.6178598Z can't guarantee that exactly these actions will be performed if
+2021-02-19T20:11:17.6179066Z "terraform apply" is subsequently run.
+2021-02-19T20:11:17.6179307Z 
+2021-02-19T20:11:17.6180097Z ##[debug]Exit code 0 received from tool '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:17.6181063Z ##[debug]STDIO streams have closed for tool '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:17.6181901Z ##[debug]which 'terraform'
+2021-02-19T20:11:17.6182706Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:17.6183496Z ##[debug]which 'terraform'
+2021-02-19T20:11:17.6184944Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:17.6186089Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:17.6187055Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:17.6188632Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:17.6189483Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:17.6190240Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: version
+2021-02-19T20:11:17.6190911Z ##[debug]workingDirectory=/home/vsts/work/1/s
+2021-02-19T20:11:17.6191587Z ##[debug]exec tool: /opt/hostedtoolcache/terraform/0.12.3/x64/terraform
+2021-02-19T20:11:17.6192596Z ##[debug]arguments:
+2021-02-19T20:11:17.6193371Z ##[debug]   version
+2021-02-19T20:11:17.6193933Z [command]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform version
+2021-02-19T20:11:18.2236429Z Terraform v0.12.3
+2021-02-19T20:11:18.2237460Z + provider.azurerm v2.48.0
+2021-02-19T20:11:18.2237945Z + provider.random v3.1.0
+2021-02-19T20:11:18.2238441Z + provider.tls v3.1.0
+2021-02-19T20:11:18.2238713Z 
+2021-02-19T20:11:18.2239161Z Your version of Terraform is out of date! The latest version
+2021-02-19T20:11:18.2239892Z is 0.14.7. You can update by downloading from www.terraform.io/downloads.html
+2021-02-19T20:11:18.2251217Z ##[debug]provider=azurerm
+2021-02-19T20:11:18.2252103Z ##[debug]workingDirectory=/home/vsts/work/1/s
+2021-02-19T20:11:18.2264911Z ##[debug]environmentServiceNameAzureRM=c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e
+2021-02-19T20:11:18.2269957Z ##[debug]commandOptions=null
+2021-02-19T20:11:18.2312153Z ##[debug]which 'terraform'
+2021-02-19T20:11:18.2313235Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:18.2314750Z ##[debug]which 'terraform'
+2021-02-19T20:11:18.2315834Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:18.2316794Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:18.2318049Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:18.2318926Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:18.2321429Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:18.2322494Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: plan
+2021-02-19T20:11:18.2324614Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: null -out=/home/vsts/work/1/s/plan-binary-a0c94e55-9e77-4a82-8b77-bc1d5f1c3245.tfplan
+2021-02-19T20:11:18.2326870Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e data subscriptionid = e692b449-ce48-439b-9f0b-dbf399f75c42
+2021-02-19T20:11:18.2328319Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e auth param tenantid = ***
+2021-02-19T20:11:18.2380057Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e auth param serviceprincipalid = ***
+2021-02-19T20:11:18.2381906Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e auth param serviceprincipalkey = ***
+2021-02-19T20:11:18.2382993Z ##[debug]exec tool: /opt/hostedtoolcache/terraform/0.12.3/x64/terraform
+2021-02-19T20:11:18.2383886Z ##[debug]arguments:
+2021-02-19T20:11:18.2384490Z ##[debug]   plan
+2021-02-19T20:11:18.2385237Z ##[debug]   null
+2021-02-19T20:11:18.2386131Z ##[debug]   -out=/home/vsts/work/1/s/plan-binary-a0c94e55-9e77-4a82-8b77-bc1d5f1c3245.tfplan
+2021-02-19T20:11:18.2654705Z [31mToo many command line arguments. Configuration path expected.[0m[0m
+2021-02-19T20:11:18.2655644Z ##[debug]workingDirectory=/home/vsts/work/1/s
+2021-02-19T20:11:18.2656514Z ##[debug]which 'terraform'
+2021-02-19T20:11:18.2657407Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:18.2658254Z ##[debug]which 'terraform'
+2021-02-19T20:11:18.2659274Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:18.2660157Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:18.2661042Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:18.2661921Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:18.2662796Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:18.2663554Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: show
+2021-02-19T20:11:18.2664546Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: -json /home/vsts/work/1/s/plan-binary-a0c94e55-9e77-4a82-8b77-bc1d5f1c3245.tfplan
+2021-02-19T20:11:18.2665440Z ##[debug]exec tool: /opt/hostedtoolcache/terraform/0.12.3/x64/terraform
+2021-02-19T20:11:18.2666101Z ##[debug]arguments:
+2021-02-19T20:11:18.2666665Z ##[debug]   show
+2021-02-19T20:11:18.2667358Z ##[debug]   -json
+2021-02-19T20:11:18.2668192Z ##[debug]   /home/vsts/work/1/s/plan-binary-a0c94e55-9e77-4a82-8b77-bc1d5f1c3245.tfplan
+2021-02-19T20:11:19.4816008Z [31mTerraform couldn't read the given file as a state or plan file.
+2021-02-19T20:11:19.4817654Z The errors while attempting to read the file as each format are
+2021-02-19T20:11:19.4818717Z shown below.
+2021-02-19T20:11:19.4820152Z 
+2021-02-19T20:11:19.4822387Z State read error: Error loading statefile: open /home/vsts/work/1/s/plan-binary-a0c94e55-9e77-4a82-8b77-bc1d5f1c3245.tfplan: no such file or directory
+2021-02-19T20:11:19.4823673Z 
+2021-02-19T20:11:19.4824947Z Plan read error: open /home/vsts/work/1/s/plan-binary-a0c94e55-9e77-4a82-8b77-bc1d5f1c3245.tfplan: no such file or directory[0m[0m
+2021-02-19T20:11:19.4826985Z ##[debug]set jsonPlanFilePath=/home/vsts/work/1/s/plan-json-f340b4f4-7998-4d9c-8a5d-efce0bdab6a3.json
+2021-02-19T20:11:19.4830750Z ##[debug]Processed: ##vso[task.setvariable variable=jsonPlanFilePath;issecret=false;]/home/vsts/work/1/s/plan-json-f340b4f4-7998-4d9c-8a5d-efce0bdab6a3.json
+2021-02-19T20:11:19.4832096Z ##[debug]rm -rf /home/vsts/work/1/s/temp-plan-48d19f75-1bdb-406d-b809-ecc67d64306b.txt
+2021-02-19T20:11:19.4832874Z ##[debug]removing file
+2021-02-19T20:11:19.4841164Z ##[debug]rm -rf /home/vsts/work/1/s/temp-plan-json-abab5246-7d4f-47a5-b531-5d20af1eab81.json
+2021-02-19T20:11:19.4842145Z ##[debug]removing file
+2021-02-19T20:11:19.4842841Z ##[debug]task result: Succeeded
+2021-02-19T20:11:19.4845339Z ##[debug]Processed: ##vso[task.complete result=Succeeded;]
+2021-02-19T20:11:19.4883427Z ##[section]Finishing: plan
+2021-02-19T20:11:19.4907645Z ##[debug]Evaluating condition for step: 'apply'
+2021-02-19T20:11:19.4909720Z ##[debug]Evaluating: SucceededNode()
+2021-02-19T20:11:19.4910415Z ##[debug]Evaluating SucceededNode:
+2021-02-19T20:11:19.4911638Z ##[debug]=> True
+2021-02-19T20:11:19.4912608Z ##[debug]Result: True
+2021-02-19T20:11:19.4913486Z ##[section]Starting: apply
+2021-02-19T20:11:19.4931648Z ==============================================================================
+2021-02-19T20:11:19.4932218Z Task         : Terraform
+2021-02-19T20:11:19.4932728Z Description  : Execute terraform commands to manage resources on AzureRM, Amazon Web Services(AWS) and Google Cloud Platform(GCP)
+2021-02-19T20:11:19.4933224Z Version      : 0.0.142
+2021-02-19T20:11:19.4933755Z Author       : Microsoft Corporation
+2021-02-19T20:11:19.4934204Z Help         : [Learn more about this task](https://aka.ms/AA5j5pf)
+2021-02-19T20:11:19.4934686Z ==============================================================================
+2021-02-19T20:11:19.5012076Z ##[debug]Using node path: /home/vsts/agents/2.182.1/externals/node/bin/node
+2021-02-19T20:11:19.6185717Z ##[debug]agent.TempDirectory=/home/vsts/work/_temp
+2021-02-19T20:11:19.6215858Z ##[debug]loading inputs and endpoints
+2021-02-19T20:11:19.6222294Z ##[debug]loading INPUT_PROVIDER
+2021-02-19T20:11:19.6240158Z ##[debug]loading INPUT_COMMAND
+2021-02-19T20:11:19.6246756Z ##[debug]loading INPUT_WORKINGDIRECTORY
+2021-02-19T20:11:19.6251189Z ##[debug]loading INPUT_ENVIRONMENTSERVICENAMEAZURERM
+2021-02-19T20:11:19.6255919Z ##[debug]loading ENDPOINT_AUTH_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e
+2021-02-19T20:11:19.6260952Z ##[debug]loading ENDPOINT_AUTH_SCHEME_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e
+2021-02-19T20:11:19.6264448Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_TENANTID
+2021-02-19T20:11:19.6268035Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_SERVICEPRINCIPALID
+2021-02-19T20:11:19.6271593Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_AUTHENTICATIONTYPE
+2021-02-19T20:11:19.6275093Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_SCOPE
+2021-02-19T20:11:19.6278560Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e_SERVICEPRINCIPALKEY
+2021-02-19T20:11:19.6285165Z ##[debug]loading ENDPOINT_AUTH_SYSTEMVSSCONNECTION
+2021-02-19T20:11:19.6288365Z ##[debug]loading ENDPOINT_AUTH_SCHEME_SYSTEMVSSCONNECTION
+2021-02-19T20:11:19.6291848Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_SYSTEMVSSCONNECTION_ACCESSTOKEN
+2021-02-19T20:11:19.6297437Z ##[debug]loading SECRET_SYSTEM_ACCESSTOKEN
+2021-02-19T20:11:19.6301430Z ##[debug]loaded 15
+2021-02-19T20:11:19.6316987Z ##[debug]Agent.ProxyUrl=undefined
+2021-02-19T20:11:19.6320958Z ##[debug]Agent.CAInfo=undefined
+2021-02-19T20:11:19.6323045Z ##[debug]Agent.ClientCert=undefined
+2021-02-19T20:11:19.6325375Z ##[debug]Agent.SkipCertValidation=undefined
+2021-02-19T20:11:19.6400724Z ##[debug]check path : /home/vsts/work/_tasks/TerraformTaskV1_fe504acc-6115-40cb-89ff-191386b5e7bf/0.0.142/task.json
+2021-02-19T20:11:19.6405271Z ##[debug]adding resource file: /home/vsts/work/_tasks/TerraformTaskV1_fe504acc-6115-40cb-89ff-191386b5e7bf/0.0.142/task.json
+2021-02-19T20:11:19.6408237Z ##[debug]system.culture=en-US
+2021-02-19T20:11:19.6426510Z ##[debug]provider=azurerm
+2021-02-19T20:11:19.6433478Z ##[debug]command=apply
+2021-02-19T20:11:19.6450946Z ##[debug]which 'terraform'
+2021-02-19T20:11:19.6458060Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:19.6461188Z ##[debug]which 'terraform'
+2021-02-19T20:11:19.6479876Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:19.6484941Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:19.6488286Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:19.6490960Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:19.6494358Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:19.6501256Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: providers
+2021-02-19T20:11:19.6505428Z ##[debug]workingDirectory=/home/vsts/work/1/s
+2021-02-19T20:11:19.6513360Z ##[debug]exec tool: /opt/hostedtoolcache/terraform/0.12.3/x64/terraform
+2021-02-19T20:11:19.6514905Z ##[debug]arguments:
+2021-02-19T20:11:19.6515889Z ##[debug]   providers
+2021-02-19T20:11:19.6523017Z [command]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform providers
+2021-02-19T20:11:19.6924750Z .
+2021-02-19T20:11:19.6926054Z â”œâ”€â”€ provider.azurerm ~>2.0
+2021-02-19T20:11:19.6926752Z â”œâ”€â”€ provider.random
+2021-02-19T20:11:19.6927446Z â””â”€â”€ provider.tls
+2021-02-19T20:11:19.6927716Z 
+2021-02-19T20:11:19.6928279Z ##[debug]3
+2021-02-19T20:11:19.6930311Z ##[warning]Multiple provider blocks specified in the .tf files in the current working drectory.
+2021-02-19T20:11:19.6931987Z ##[debug]Processed: ##vso[task.issue type=warning;]Multiple provider blocks specified in the .tf files in the current working drectory.
+2021-02-19T20:11:19.6933016Z ##[debug]workingDirectory=/home/vsts/work/1/s
+2021-02-19T20:11:19.6933872Z ##[debug]which 'terraform'
+2021-02-19T20:11:19.6934722Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:19.6936248Z ##[debug]which 'terraform'
+2021-02-19T20:11:19.6937248Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:19.6938615Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:19.6939620Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:19.6941180Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:19.6942632Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:19.6943525Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: validate
+2021-02-19T20:11:19.6944712Z ##[debug]exec tool: /opt/hostedtoolcache/terraform/0.12.3/x64/terraform
+2021-02-19T20:11:19.6945574Z ##[debug]arguments:
+2021-02-19T20:11:19.6946160Z ##[debug]   validate
+2021-02-19T20:11:19.6946739Z [command]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform validate
+2021-02-19T20:11:21.4636925Z [33m
+2021-02-19T20:11:21.4638712Z [1m[33mWarning: [0m[0m[1m"skip_credentials_validation": [DEPRECATED] This field is deprecated and will be removed in version 3.0 of the Azure Provider[0m
+2021-02-19T20:11:21.4639390Z 
+2021-02-19T20:11:21.4640118Z [0m[0m[0m
+2021-02-19T20:11:21.4641236Z [32m[1mSuccess![0m The configuration is valid, but there were some validation warnings as shown above.
+2021-02-19T20:11:21.4642106Z [0m
+2021-02-19T20:11:21.4720190Z ##[debug]Exit code 0 received from tool '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:21.4733403Z ##[debug]STDIO streams have closed for tool '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:21.4751187Z ##[debug]provider=azurerm
+2021-02-19T20:11:21.4752641Z ##[debug]commandOptions=null
+2021-02-19T20:11:21.4753792Z ##[debug]workingDirectory=/home/vsts/work/1/s
+2021-02-19T20:11:21.4755521Z ##[debug]environmentServiceNameAzureRM=c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e
+2021-02-19T20:11:21.4757631Z ##[debug]which 'terraform'
+2021-02-19T20:11:21.4760597Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:21.4763541Z ##[debug]which 'terraform'
+2021-02-19T20:11:21.4764665Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:21.4765787Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:21.4766904Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:21.4768424Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:21.4769953Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:11:21.4771307Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: apply
+2021-02-19T20:11:21.4772669Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: -auto-approve
+2021-02-19T20:11:21.4774108Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e data subscriptionid = e692b449-ce48-439b-9f0b-dbf399f75c42
+2021-02-19T20:11:21.4781944Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e auth param tenantid = ***
+2021-02-19T20:11:21.4784858Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e auth param serviceprincipalid = ***
+2021-02-19T20:11:21.4787200Z ##[debug]c9c0ea1a-ae50-4d2a-8d43-864e876d1b3e auth param serviceprincipalkey = ***
+2021-02-19T20:11:21.4788262Z ##[debug]exec tool: /opt/hostedtoolcache/terraform/0.12.3/x64/terraform
+2021-02-19T20:11:21.4789088Z ##[debug]arguments:
+2021-02-19T20:11:21.4789806Z ##[debug]   apply
+2021-02-19T20:11:21.4790729Z ##[debug]   -auto-approve
+2021-02-19T20:11:21.4791778Z [command]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform apply -auto-approve
+2021-02-19T20:11:30.0012152Z [0m[1mtls_private_key.example_ssh: Creating...[0m[0m
+2021-02-19T20:11:33.6295963Z [0m[1mtls_private_key.example_ssh: Creation complete after 4s [id=0a919a6a7deaa82d27b044be8664c4a4ef032e39][0m[0m
+2021-02-19T20:11:35.8174003Z [0m[1mazurerm_resource_group.myterraformgroup: Creating...[0m[0m
+2021-02-19T20:11:37.0835337Z [0m[1mazurerm_resource_group.myterraformgroup: Creation complete after 1s [id=/subscriptions/e692b449-ce48-439b-9f0b-dbf399f75c42/resourceGroups/myResourceGroup][0m[0m
+2021-02-19T20:11:37.1111802Z [0m[1mrandom_id.randomId: Creating...[0m[0m
+2021-02-19T20:11:37.1113156Z [0m[1mazurerm_public_ip.myterraformpublicip: Creating...[0m[0m
+2021-02-19T20:11:37.1114743Z [0m[1mrandom_id.randomId: Creation complete after 0s [id=lWwInlcuTts][0m[0m
+2021-02-19T20:11:37.1115889Z [0m[1mazurerm_virtual_network.myterraformnetwork: Creating...[0m[0m
+2021-02-19T20:11:37.1116876Z [0m[1mazurerm_network_security_group.myterraformnsg: Creating...[0m[0m
+2021-02-19T20:11:37.1203549Z [0m[1mazurerm_storage_account.mystorageaccount: Creating...[0m[0m
+2021-02-19T20:11:42.5522104Z [0m[1mazurerm_public_ip.myterraformpublicip: Creation complete after 5s [id=/subscriptions/e692b449-ce48-439b-9f0b-dbf399f75c42/resourceGroups/myResourceGroup/providers/Microsoft.Network/publicIPAddresses/myPublicIP][0m[0m
+2021-02-19T20:11:44.2307097Z [0m[1mazurerm_virtual_network.myterraformnetwork: Creation complete after 7s [id=/subscriptions/e692b449-ce48-439b-9f0b-dbf399f75c42/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVnet][0m[0m
+2021-02-19T20:11:44.2362929Z [0m[1mazurerm_subnet.myterraformsubnet: Creating...[0m[0m
+2021-02-19T20:11:44.7626410Z [0m[1mazurerm_network_security_group.myterraformnsg: Creation complete after 8s [id=/subscriptions/e692b449-ce48-439b-9f0b-dbf399f75c42/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNetworkSecurityGroup][0m[0m
+2021-02-19T20:11:47.1199648Z [0m[1mazurerm_storage_account.mystorageaccount: Still creating... [10s elapsed][0m[0m
+2021-02-19T20:11:48.5313442Z [0m[1mazurerm_subnet.myterraformsubnet: Creation complete after 5s [id=/subscriptions/e692b449-ce48-439b-9f0b-dbf399f75c42/resourceGroups/myResourceGroup/providers/Microsoft.Network/virtualNetworks/myVnet/subnets/mySubnet][0m[0m
+2021-02-19T20:11:48.5374391Z [0m[1mazurerm_network_interface.myterraformnic: Creating...[0m[0m
+2021-02-19T20:11:52.1896292Z [0m[1mazurerm_network_interface.myterraformnic: Creation complete after 3s [id=/subscriptions/e692b449-ce48-439b-9f0b-dbf399f75c42/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/myNIC][0m[0m
+2021-02-19T20:11:52.2013763Z [0m[1mazurerm_network_interface_security_group_association.example: Creating...[0m[0m
+2021-02-19T20:11:54.3731910Z [0m[1mazurerm_network_interface_security_group_association.example: Creation complete after 2s [id=/subscriptions/e692b449-ce48-439b-9f0b-dbf399f75c42/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkInterfaces/myNIC|/subscriptions/e692b449-ce48-439b-9f0b-dbf399f75c42/resourceGroups/myResourceGroup/providers/Microsoft.Network/networkSecurityGroups/myNetworkSecurityGroup][0m[0m
+2021-02-19T20:11:57.1206010Z [0m[1mazurerm_storage_account.mystorageaccount: Still creating... [20s elapsed][0m[0m
+2021-02-19T20:12:00.2145094Z [0m[1mazurerm_storage_account.mystorageaccount: Creation complete after 23s [id=/subscriptions/e692b449-ce48-439b-9f0b-dbf399f75c42/resourceGroups/myResourceGroup/providers/Microsoft.Storage/storageAccounts/diag956c089e572e4edb][0m[0m
+2021-02-19T20:12:00.2237099Z [0m[1mazurerm_linux_virtual_machine.myterraformvm: Creating...[0m[0m
+2021-02-19T20:12:10.2225834Z [0m[1mazurerm_linux_virtual_machine.myterraformvm: Still creating... [10s elapsed][0m[0m
+2021-02-19T20:12:20.0025782Z [0m[1mazurerm_linux_virtual_machine.myterraformvm: Creation complete after 20s [id=/subscriptions/e692b449-ce48-439b-9f0b-dbf399f75c42/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM][0m[0m
+2021-02-19T20:12:20.0184074Z [33m
+2021-02-19T20:12:20.0187926Z [1m[33mWarning: [0m[0m[1m"skip_credentials_validation": [DEPRECATED] This field is deprecated and will be removed in version 3.0 of the Azure Provider[0m
+2021-02-19T20:12:20.0190919Z 
+2021-02-19T20:12:20.0193569Z [0m[0m[0m
+2021-02-19T20:12:20.0196212Z [0m[1m[32m
+2021-02-19T20:12:20.0211517Z Apply complete! Resources: 11 added, 0 changed, 0 destroyed.[0m
+2021-02-19T20:12:20.0212506Z [0m[1m[32m
+2021-02-19T20:12:20.0212880Z Outputs:
+2021-02-19T20:12:20.0213026Z 
+2021-02-19T20:12:20.0213550Z tls_private_key = -----BEGIN RSA PRIVATE KEY-----
+2021-02-19T20:12:20.0214026Z MIIJKQIBAAKCAgEAtFkKy5bzmr79VRGIK2JNngq58HLabz2veARsUDk+fiqacXDQ
+2021-02-19T20:12:20.0214471Z HuoY7O6gl8rZuAeVcbt/Ub5USq5m3/MdI4jH4X11CunNbB31tpXlol1c2ae4YOlg
+2021-02-19T20:12:20.0214915Z b2ADvx4378Oso2RetqASHMz2V0qy59Gzd/5+6FIx7J40Y70cDnziZhu1kqnX6q57
+2021-02-19T20:12:20.0215355Z bDr1GaFuDERH9OMQi6yiiIsyXYLxR3nqB/vKbcoQ6D9sEt/Re8e11+8wZsxD7Sp0
+2021-02-19T20:12:20.0215978Z K75vEuCzYgfjRTStRHAZ+P6pxt5dKXu21DmqYHzOX9xHw8H7O35qOW1ZuNgoaOjK
+2021-02-19T20:12:20.0216458Z dZcdINmjv/NoRCPAro9L0Iz3J4ppCvcgIsSDaxVJRwzJxaSKq66sz2nwkTAz7QJB
+2021-02-19T20:12:20.0216907Z SN6RK71zTRhKLETaQvqhHZcZbWNrNUOQC/q6Rj2FucUmotABnrUsEwlCDbbQz3Co
+2021-02-19T20:12:20.0217353Z pCShdqAOzwUOHY6Po5yyRSVCmUGiExq10Lk4FAMYwTyDH6HiEQ73zGhXtp7V73My
+2021-02-19T20:12:20.0217806Z 8XtQChntflHpTVHKQaW+gL+54ISxY/UH97ZLylUZ/vS+VVc8wFXgwwVLxIuUGqhd
+2021-02-19T20:12:20.0218270Z e66cgotGu5gcWeJg7LcE29nWJMpeZDyhbnhF1Lsr7GXGz4e0SXOeyxisLPbL9ouu
+2021-02-19T20:12:20.0218718Z jBrZvcBZDF6fbnKxIutTiCSRO1YYtAydUs3+cglV1xFwoGif7+Gnp70YDnkCAwEA
+2021-02-19T20:12:20.0219163Z AQKCAgBFHYrBk0wwldlIbLuexMGyO7IesCV+VEmW2TsZU5bbi0A9EVrxPg3nX1w0
+2021-02-19T20:12:20.0219794Z UA04Nc/UEmMs1KBBLq1GTklwgM75X7cnQ4ryUFkGbFPg8Z7P2zMSEN5gUI+fAtm1
+2021-02-19T20:12:20.0220417Z DWxwAds6agYG+5W8xmfh57+70NCaAEYZxFeXkbXa54lsUFo5ptWUnuG2DLI57F/c
+2021-02-19T20:12:20.0221218Z W56n/w0sOjDf21il9bS6C8Lg5GIjyTjJiOTGJviFU3ghFQ2bl9TAY3C6AvVWar7U
+2021-02-19T20:12:20.0221853Z Zul2cEWm4L9TaWVvTXCuoTbkBmWBLNN6cVUfdIvvtPbIo1urN0vlSLGudwc2u7HB
+2021-02-19T20:12:20.0222481Z smrXEkyZmVkYx61Afg7boPGz4VPrZQPIRYzSCgQZP8zebY7fjfWGzJFtOKWibEaE
+2021-02-19T20:12:20.0223084Z itnHJeTcR/PGzXYYMuxRWviNylv3lqJflUSdkIaBxM1xZ1z8qIw19DD1r8pleF/B
+2021-02-19T20:12:20.0223537Z 2GR1MehvmcheED+9IwyO4rH79V9NjOHEDBZm3aIO6Xi5nJiNlRQwiO+zmKySsBdA
+2021-02-19T20:12:20.0224163Z q9Qi+ButKkxSekM2ZmaDjhUyU3c8XznHlpJcKXg8J1e+seYrKPz822JdQKxfj3bF
+2021-02-19T20:12:20.0224770Z k2dZYEd0JggoWGLOBqSPB3o3bap5YHT21RccXfd/mIJ/UWU78pMU61Q27RRQT9/1
+2021-02-19T20:12:20.0225194Z APHPyQ2Osr3m65+jO4Hoi5w+cjF11HBQuBhPoAiEVgPkj/8O8QKCAQEAy7vzYokP
+2021-02-19T20:12:20.0225616Z JpG2Pb6CRo8r1PlNeyyYdI6Ce4co20xraHMOryf0Kl2+rL+jIuqk5Ja8UEKlSchk
+2021-02-19T20:12:20.0226060Z uHrVMGBvaTKkGpxRwkKa+tvH3ul8bzGLL4i5dJZhtYkpdhTft1p3dIXSJvh21/6p
+2021-02-19T20:12:20.0226487Z N/JsR9MKpE1U82NOOl/OFtZMKcSchCQsn6CPvTSZeveWW8PKLd3wEe7qg712CtFG
+2021-02-19T20:12:20.0226912Z LAv1qrbgaLhEJSlhZxlGEPEIYVE8MBDgYNf1zGZsTGqEh7g0qkSbLIVKVrGQdnD9
+2021-02-19T20:12:20.0227425Z bD5OpC7HevobntRXs7JTA+x9uVt8sy7BNelHJtGab27TGUdmqWpQUYhG/HpDIHJO
+2021-02-19T20:12:20.0227884Z Bl3WAKjwOTdTOwKCAQEA4p023gVF74nIweFQQLjg9wtHzuqtS1zGL3GTfOVu/xlZ
+2021-02-19T20:12:20.0228326Z wUJ1xp+n72r8qz9YdfkeBUv8eLdMRL2Zvgu1WjIG2PxIgxH87J14QaSWJCDYwh/P
+2021-02-19T20:12:20.0228748Z bd4+l/zRFi+HypRmm2HzISh53ywAIyYGwUa6dE/AUqvv5e9tgpAM0qmg5+/JR+Mb
+2021-02-19T20:12:20.0229439Z kPKiv0x++4AHkVbKw7MbMiEk0Vyz4nOOx9OX5xiwZVr3oWl3rKgsIVUiq+DHlf5W
+2021-02-19T20:12:20.0229879Z 4DgeFjcWr1Fdj5PWHDwWALAaMP9KSeZzVCqAaqUWxKGj1XyWXCnSRTQ51oGW0zYa
+2021-02-19T20:12:20.0230329Z 9ZbomHy56QWcWFiextQamaiFYcu6Yv2aMxrnbAfh2wKCAQEAtNXoS47ydr6hbx65
+2021-02-19T20:12:20.0231118Z Td3o/womHu3PiK2x3elzd2vWboiqAQjKrgw1oeob6HMz136AOhFd2ybXV/QXZPBE
+2021-02-19T20:12:20.0231583Z E7ESflhALdim7YHFX/QJMj1cmN2YF4cfxV2xApG2nW3cV/4sMdEa08/D7dftCrel
+2021-02-19T20:12:20.0232208Z W38Up1B+8Et3h0fBpNVSQ+xD+5At5bhZfw9iU6NuwtWbMJ/LYxH5Q9LLoW8gKN5Y
+2021-02-19T20:12:20.0232816Z RDtCqWWYgkWproHzeUX80YE5WFx4XWyQNifZ6Qm1HWj1/0d0W40SeD8Egl6vuQWY
+2021-02-19T20:12:20.0233293Z pGx5tbou+l6PVw1D7xHolrcqYirkr+0eUkihcW+yDTBDiIsYzyPKj3NGFFqYCE/r
+2021-02-19T20:12:20.0233730Z oi2cXwKCAQEA0y6TfSAI5ovOrO9eLJKeA1td1fRY/ow8nOYI/jGJ2O00+acHvsv2
+2021-02-19T20:12:20.0234336Z YmWfha8Irxgy49jGNXEMAFt4tOSQYreQLhIdORhATfkJopLQ4GZD2dRvKAIe7uDJ
+2021-02-19T20:12:20.0234933Z sRUmRKE7Zb5IJzRjLpkAn8DGNsPE6rOPlPtqGyufMDcx2/f8XWjWeMmqXM/g3slY
+2021-02-19T20:12:20.0235572Z 5OORKd5qIyn8RCEjAICVmoj6HDqRqukVKb82WhPBVQN77Kw8HVTiamOVbmqdjzJT
+2021-02-19T20:12:20.0236183Z T5pRyIWK2NEd6BI0tkiSYIAEJgFdnwSuTRwdY8wxCz5mF9vtsnsdpUMcqJWzuLcz
+2021-02-19T20:12:20.0241672Z QXbbFnGvtbbf+yZS9qo2zh1r4AhIdiJ6VQKCAQA2JCiY8pn4K4iY8N1bdkJQWqjY
+2021-02-19T20:12:20.0242673Z NeP/nQmHyztiK5ryKvnVGLLO4cuCsxDPyw/e/T1UQ1BJXQifPtXVgBUMx09BMmOJ
+2021-02-19T20:12:20.0267247Z f/dZSTOX25Rce1rvPSBFn2Rdub/G8fkrEl1tTZALwS04Mr4U6jTKFhwUyiyiETKA
+2021-02-19T20:12:20.0268370Z Y4PRiLb84iLLT4zMZl4L8vt4ctFjkwLCZuiVxpQ32wg2luLQ/kZCv4GiLbkDqHWf
+2021-02-19T20:12:20.0268956Z vm8wDD39zCX9BBB0AZYuxOqevwv7Se/cDucNbojBXt6YqCE4uELswZo6wyTwCcH3
+2021-02-19T20:12:20.0269506Z OVbxVkYwsXlFa4DYlu9+Cn9Nst6pVF/y2ZfPf6i7h4VW3ff7ajJD7o1K6B9H
+2021-02-19T20:12:20.0270402Z -----END RSA PRIVATE KEY-----[0m
+2021-02-19T20:12:20.0354205Z ##[debug]Exit code 0 received from tool '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:12:20.0355808Z ##[debug]STDIO streams have closed for tool '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:12:20.0356875Z ##[debug]workingDirectory=/home/vsts/work/1/s
+2021-02-19T20:12:20.0357744Z ##[debug]which 'terraform'
+2021-02-19T20:12:20.0358982Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:12:20.0360080Z ##[debug]which 'terraform'
+2021-02-19T20:12:20.0360935Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:12:20.0361790Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:12:20.0363067Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:12:20.0364482Z ##[debug]which '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:12:20.0365562Z ##[debug]found: '/opt/hostedtoolcache/terraform/0.12.3/x64/terraform'
+2021-02-19T20:12:20.0366630Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: output
+2021-02-19T20:12:20.0367961Z ##[debug]/opt/hostedtoolcache/terraform/0.12.3/x64/terraform arg: -json
+2021-02-19T20:12:20.0369194Z ##[debug]exec tool: /opt/hostedtoolcache/terraform/0.12.3/x64/terraform
+2021-02-19T20:12:20.0370606Z ##[debug]arguments:
+2021-02-19T20:12:20.0371311Z ##[debug]   output
+2021-02-19T20:12:20.0372333Z ##[debug]   -json
+2021-02-19T20:12:20.0731878Z ##[debug]set jsonOutputVariablesPath=/home/vsts/work/1/s/output-fe9dfdf2-c112-4285-9ed8-361c1bcd2527.json
+2021-02-19T20:12:20.0737592Z ##[debug]Processed: ##vso[task.setvariable variable=jsonOutputVariablesPath;issecret=false;]/home/vsts/work/1/s/output-fe9dfdf2-c112-4285-9ed8-361c1bcd2527.json
+2021-02-19T20:12:20.0740034Z ##[debug]rm -rf /home/vsts/work/1/s/temp-output-61d610c4-830a-44c1-b0d1-b2259c78849f.json
+2021-02-19T20:12:20.0741579Z ##[debug]removing file
+2021-02-19T20:12:20.0743430Z ##[debug]task result: Succeeded
+2021-02-19T20:12:20.0745838Z ##[debug]Processed: ##vso[task.complete result=Succeeded;]
+2021-02-19T20:12:20.0777538Z ##[section]Finishing: apply
+2021-02-19T20:12:20.0807318Z ##[debug]Evaluating condition for step: 'Checkout davidjtgriffiths/terraform-azure@main to s'
+2021-02-19T20:12:20.0812259Z ##[debug]Evaluating: AlwaysNode()
+2021-02-19T20:12:20.0813180Z ##[debug]Evaluating AlwaysNode:
+2021-02-19T20:12:20.0816905Z ##[debug]=> True
+2021-02-19T20:12:20.0818052Z ##[debug]Result: True
+2021-02-19T20:12:20.0819569Z ##[section]Starting: Checkout davidjtgriffiths/terraform-azure@main to s
+2021-02-19T20:12:20.0826843Z ==============================================================================
+2021-02-19T20:12:20.0827606Z Task         : Get sources
+2021-02-19T20:12:20.0828176Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2021-02-19T20:12:20.0829074Z Version      : 1.0.0
+2021-02-19T20:12:20.0829542Z Author       : Microsoft
+2021-02-19T20:12:20.0830451Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2021-02-19T20:12:20.0831055Z ==============================================================================
+2021-02-19T20:12:20.4402500Z Cleaning any cached credential from repository: davidjtgriffiths/terraform-azure (GitHub)
+2021-02-19T20:12:20.4421889Z ##[debug]Repository url=https://github.com/davidjtgriffiths/terraform-azure
+2021-02-19T20:12:20.4423069Z ##[debug]targetPath=/home/vsts/work/1/s
+2021-02-19T20:12:20.4454322Z ##[section]Finishing: Checkout davidjtgriffiths/terraform-azure@main to s
+2021-02-19T20:12:20.4515816Z ##[section]Starting: Finalize Job
+2021-02-19T20:12:20.4545789Z ##[debug]Waiting for log plugin 'Test Result Parser plugin' to finish.
+2021-02-19T20:12:20.4546143Z ##[debug]Waiting for log plugin 'Test File Publisher plugin' to finish.
+2021-02-19T20:12:20.4547399Z TestResultLogParser: JasmineTestResultParser : Starting jasmine test result parser.
+2021-02-19T20:12:20.4547818Z TestResultLogParser: JestTestResultParser : Starting jest test result parser.
+2021-02-19T20:12:20.4548239Z TestResultLogParser: MochaTestResultParser : Starting mocha test result parser.
+2021-02-19T20:12:20.4548815Z TestResultLogParser: PythonTestResultParser : Starting python test result parser.
+2021-02-19T20:12:20.4549476Z TestResultLogParser: Debug: PERF : PythonParserParseOperation : took 8.7895 ms for line 7.
+2021-02-19T20:12:20.4549928Z TestResultLogParser: Debug: PERF : JasmineParserParseOperation : took 20.3824 ms for line 7.
+2021-02-19T20:12:20.4550465Z TestResultLogParser: Debug: PERF : JestParserParseOperation : took 2.1497 ms for line 7.
+2021-02-19T20:12:20.4550896Z TestResultLogParser: Debug: PERF : MochaParserParseOperation : took 17.3104 ms for line 7.
+2021-02-19T20:12:20.4551503Z TestResultLogParser: Debug: PERF : JasmineParserParseOperation : took 2.216 ms for line 213.
+2021-02-19T20:12:20.6566451Z TestResultLogParser: Waiting for log plugin to finish, pending process 4 log lines.
+2021-02-19T20:12:20.6571717Z Cleaning up task key
+2021-02-19T20:12:20.6572880Z Start cleaning up orphan processes.
+2021-02-19T20:12:20.6707194Z ##[section]Finishing: Finalize Job
+2021-02-19T20:12:20.6766547Z ##[debug]Starting diagnostic file upload.
+2021-02-19T20:12:20.6766987Z ##[debug]Setting up diagnostic log folders.
+2021-02-19T20:12:20.6768790Z ##[debug]Creating diagnostic log files folder.
+2021-02-19T20:12:20.6769383Z ##[debug]Creating diagnostic log environment file.
+2021-02-19T20:12:20.6816944Z ##[debug]Creating capabilities file.
+2021-02-19T20:12:20.6847594Z ##[debug]Copying 1 worker diag logs.
+2021-02-19T20:12:20.6880721Z ##[debug]Copying 1 agent diag logs.
+2021-02-19T20:12:20.6882045Z ##[debug]Zipping diagnostic files.
+2021-02-19T20:12:20.6912044Z ##[debug]Uploading diagnostic metadata file.
+2021-02-19T20:12:20.6960907Z ##[debug]Diagnostic file upload complete.
+2021-02-19T20:12:20.6996384Z ##[section]Finishing: deploy_terraform
