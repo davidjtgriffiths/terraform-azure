@@ -14,10 +14,10 @@ stages :
 
           provider: 'azurerm'
           command: 'init'
-          backendServiceArm: 'tasconn'
-          backendAzureRmResourceGroupName: 'targ'
-          backendAzureRmStorageAccountName: 'tasacc'
-          backendAzureRmContainerName: 'tasc'
+          backendServiceArm: 'tasconn' #service connection
+          backendAzureRmResourceGroupName: 'targ' #resource group
+          backendAzureRmStorageAccountName: 'tasacc' #storage account
+          backendAzureRmContainerName: 'tasc' #storage container for Terraform state file
           backendAzureRmKey: 'terraform.tfstate'
       - task: TerraformTaskV1@0
         displayName: 'validate'
