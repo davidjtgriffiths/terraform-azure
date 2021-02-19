@@ -32,7 +32,7 @@ stages :
       strategy:
        runOnce:
          deploy:
-            steps:
+            steps: 
               - checkout: self
               - task: TerraformInstaller@0
                 displayName: 'install'
@@ -53,10 +53,10 @@ stages :
                 inputs:
                   provider: 'azurerm'
                   command: 'plan'
-                  environmentServiceNameAzureRM: 'tasconn'
+                  environmentServiceNameAzureRM: 'targ'
               - task: TerraformTaskV1@0
                 displayName: 'apply'
                 inputs:
                   provider: 'azurerm'
                   command: 'apply'
-                  environmentServiceNameAzureRM: 'tasconn'
+                  environmentServiceNameAzureRM: 'targ'
