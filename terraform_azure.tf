@@ -4,6 +4,8 @@ provider "azurerm" {
     # If you're using version 1.x, the "features" block is not allowed.
     version = "~>2.0"
     skip_provider_registration = true
+    subscription_id = var.subscription_id
+    tenant_id = var.tenant_id
     features {}
 }
 
